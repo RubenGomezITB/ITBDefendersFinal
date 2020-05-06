@@ -361,6 +361,11 @@
             </e>
           </e>
         </e>
+        <e p="Scriptables" t="Include">
+          <e p="GeneralScriptables" t="Include">
+            <e p="UnitsScriptable.cs" t="Include" />
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="UnitAttack" t="Include">
             <e p="UnitAttackDetecter.cs" t="Include" />
