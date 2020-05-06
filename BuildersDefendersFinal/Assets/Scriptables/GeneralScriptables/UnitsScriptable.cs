@@ -1,18 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
-public class UnitsScriptable : MonoBehaviour
+[CreateAssetMenu (menuName = "Scriptables/Units")]
+public class UnitsScriptable : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public UnitsTranslation.Unit Name;
+    public int Life;
+    public float Damage;
+    public float Range;
+    public int cost;
+    public float attSpeed;
+    public float movSpeed;
+    public int lvl;
 
-    // Update is called once per frame
-    void Update()
+    public String GetUnitNamePerLenguage(UnitsTranslation.Languages lenguages)
     {
-        
+        return UnitsTranslation.getUnitNamePerLenguage(Name, lenguages);
     }
 }

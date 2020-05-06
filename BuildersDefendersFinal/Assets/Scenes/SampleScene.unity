@@ -514,6 +514,7 @@ GameObject:
   - component: {fileID: 1266659653}
   - component: {fileID: 1266659652}
   - component: {fileID: 1266659657}
+  - component: {fileID: 1266659658}
   m_Layer: 0
   m_Name: Tower
   m_TagString: defense
@@ -623,6 +624,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1266659658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266659651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d53e6af0d793bf4292e856662784957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 0
+  _us: {fileID: 11400000, guid: ff472fae1f60bc74780debb6f558a654, type: 2}
 --- !u!1001 &1384546260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -694,6 +709,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Unidad ataque
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881812900273966062, guid: 739de45bf85e6aa428a8bb6eb71ac3d9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 739de45bf85e6aa428a8bb6eb71ac3d9, type: 3}
@@ -917,6 +937,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Unidad ataque (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881812900273966062, guid: 739de45bf85e6aa428a8bb6eb71ac3d9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 739de45bf85e6aa428a8bb6eb71ac3d9, type: 3}
