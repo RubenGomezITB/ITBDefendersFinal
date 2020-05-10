@@ -376,9 +376,13 @@
           <e p="UnitDie" t="Include">
             <e p="UnitDie.cs" t="Include" />
           </e>
+          <e p="UnitLife.cs" t="Include" />
           <e p="UnitsMovement" t="Include">
             <e p="Movement.cs" t="Include" />
           </e>
+        </e>
+        <e p="Translations" t="Include">
+          <e p="UnitsTranslation.cs" t="Include" />
         </e>
       </e>
       <e p="BuildersDefendersFinal.sln" t="IncludeFlat" />

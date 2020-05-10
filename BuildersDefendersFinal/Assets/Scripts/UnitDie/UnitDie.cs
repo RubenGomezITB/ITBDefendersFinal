@@ -18,10 +18,14 @@ public class UnitDie : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            OnDefenseUnitDied?.Invoke(this, EventArgs.Empty);
+            
             Destroy(gameObject);
         }
     }
 
+    private void OnDestroy()
+    {
+        OnDefenseUnitDied?.Invoke(this, EventArgs.Empty);
+    }
 }
 
