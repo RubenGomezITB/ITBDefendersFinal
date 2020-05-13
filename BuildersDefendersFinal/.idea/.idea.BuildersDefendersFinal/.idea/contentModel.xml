@@ -367,18 +367,23 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="UnitAttack" t="Include">
-            <e p="UnitAttackDetecter.cs" t="Include" />
-            <e p="UnitDetect" t="Include">
-              <e p="UnitDetectRange.cs" t="Include" />
+          <e p="Spawns" t="Include">
+            <e p="AttackUnitSpawner.cs" t="Include" />
+          </e>
+          <e p="Units" t="Include">
+            <e p="UnitAttack" t="Include">
+              <e p="UnitAttackDetecter.cs" t="Include" />
+              <e p="UnitDetect" t="Include">
+                <e p="UnitDetectRange.cs" t="Include" />
+              </e>
             </e>
-          </e>
-          <e p="UnitDie" t="Include">
-            <e p="UnitDie.cs" t="Include" />
-          </e>
-          <e p="UnitLife.cs" t="Include" />
-          <e p="UnitsMovement" t="Include">
-            <e p="Movement.cs" t="Include" />
+            <e p="UnitDie" t="Include">
+              <e p="UnitDie.cs" t="Include" />
+            </e>
+            <e p="UnitLife.cs" t="Include" />
+            <e p="UnitsMovement" t="Include">
+              <e p="Movement.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Translations" t="Include">
