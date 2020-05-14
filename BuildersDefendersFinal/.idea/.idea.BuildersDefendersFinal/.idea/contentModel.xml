@@ -367,8 +367,12 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="GameManager.cs" t="Include" />
           <e p="Photon" t="Include">
             <e p="Launcher.cs" t="Include" />
+          </e>
+          <e p="Player" t="Include">
+            <e p="PlayerName.cs" t="Include" />
           </e>
           <e p="Spawns" t="Include">
             <e p="AttackUnitSpawner.cs" t="Include" />

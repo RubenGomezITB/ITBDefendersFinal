@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class UnitAttackDetecter : MonoBehaviour
@@ -16,10 +17,12 @@ public class UnitAttackDetecter : MonoBehaviour
 
     public bool attackOnCooldown = false;
     public bool isAnAttackUnit = false;
+    private PhotonView PhotonView;
 
  
     void Start()
     {
+        PhotonView = GetComponentInParent<PhotonView>();
         _boxCollider = GetComponent<BoxCollider>();
     }
 
@@ -28,8 +31,11 @@ public class UnitAttackDetecter : MonoBehaviour
         
         if (DetectRange.isOnDetectRange && !isOnAttackRange && isAnAttackUnit)
         {
-            transform.parent.position =
-                Vector3.MoveTowards(transform.parent.position, DetectRange.target.transform.position, .01f);
+            if (PhotonView.IsMine)
+            {
+                 transform.parent.position =
+                                Vector3.MoveTowards(transform.parent.position, DetectRange.target.transform.position, .01f);
+            }
         }
     }
 

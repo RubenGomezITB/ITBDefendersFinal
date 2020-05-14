@@ -14,7 +14,9 @@ public class Launcher : MonoBehaviourPunCallbacks
     public Text Text;
     private bool connected = false;
     public Text peopleConnected;
-    
+    private bool isLoading = false;
+    public Button start;
+
 
     private void Awake()
     {
@@ -32,6 +34,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         {
             peopleConnected.text = PhotonNetwork.CurrentRoom.PlayerCount+ "/"+  maxPlayers;
         }
+        
     }
 
     public void Connect()
@@ -50,7 +53,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("conectado a master bro");
-        Text.text += ("\nConectado a master");
+        Text.text += ("\nConectado a master. Bienvenido "+ PlayerPrefs.GetString("PlayerName", ""));
     }
 
     public override void OnDisconnected(DisconnectCause cause)
@@ -66,7 +69,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
         Debug.Log("No hay salas disponibles");
-        Text.text += ("\nNo hay salas disponibles, creando una");
+        Text.text += ("\nNo hay salas disponibles, creando una.");
         PhotonNetwork.CreateRoom(null, new RoomOptions{MaxPlayers = maxPlayers});
     }
 
@@ -75,6 +78,10 @@ public class Launcher : MonoBehaviourPunCallbacks
         Debug.Log("Entrando en sala bro");
         Text.text += ("\nConectado a la sala, esperando a otro jugador...");
         connected = true;
+        if (PhotonNetwork.IsMasterClient)
+        {
+            start.interactable = true;
+        }
     }
     
     

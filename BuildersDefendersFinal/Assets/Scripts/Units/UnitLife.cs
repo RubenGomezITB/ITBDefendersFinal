@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class UnitLife : MonoBehaviour
 {
     public float life;
+    public PhotonView PhotonView;
 
     [SerializeField] private UnitsScriptable _us;
 
@@ -25,6 +27,10 @@ public class UnitLife : MonoBehaviour
 
     private void destroyThisObject()
     {
-        Destroy(gameObject);
+        if (PhotonView.IsMine)
+        {
+             PhotonNetwork.Destroy(gameObject);
+        }
+       
     }
 }

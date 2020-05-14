@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Dragdrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     private GameObject thisObject, objectToInstantiate;
     private RectTransform _rectTransform, startRectTransform;
@@ -56,7 +57,8 @@ public class Dragdrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public void OnEndDrag(PointerEventData eventData)
     {
         canMove = true;
-        Instantiate(enemy, objectToInstantiate.transform.position, Quaternion.identity);
+        //Instantiate(enemy, objectToInstantiate.transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate(enemy.name, objectToInstantiate.transform.position, Quaternion.identity);
         Destroy(objectToInstantiate.gameObject);
         objectToInstantiate = null;
         

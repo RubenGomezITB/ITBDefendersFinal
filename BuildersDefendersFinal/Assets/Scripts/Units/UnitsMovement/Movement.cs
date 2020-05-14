@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,6 +12,7 @@ public class Movement : MonoBehaviour
     public NavMeshAgent agent;
 
     private UnitDetectRange _unitAttackRange;
+    public PhotonView PhotonView;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,10 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!PhotonView.IsMine)
+        {
+            return;
+        }
         if (_unitAttackRange.isOnDetectRange)
         {
             agent.isStopped = true;
