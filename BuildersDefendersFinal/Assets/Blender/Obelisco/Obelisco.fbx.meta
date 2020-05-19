@@ -1,140 +1,99 @@
 fileFormatVersion: 2
 guid: 64bdc1084d6305040a9c71834acbc285
 ModelImporter:
-  serializedVersion: 19300
-  internalIDToNameTable:
-  - first:
-      74: -9173301838484042135
-    second: Diamante|DiamanteAction.002
-  - first:
-      74: 7814410564927481192
-    second: Diamante|DiamanteIDLE
-  - first:
-      74: -403084999516190610
-    second: Diamante|muerteDiamante
-  - first:
-      74: 996500941992659115
-    second: Diamante|MuerteObelisco1
-  - first:
-      74: 6670883573985168165
-    second: Diamante|MuerteObelisco2
-  - first:
-      74: 2806032771394637832
-    second: Diamante|MuerteObelisco3
-  - first:
-      74: -767242572610836889
-    second: Diamante|MuerteObelisco4
-  - first:
-      74: 6319905149499950707
-    second: Diamante|muerteRunas
-  - first:
-      74: -5583591789156315662
-    second: RUNAS|DiamanteIDLE
-  - first:
-      74: -21126501079802142
-    second: RUNAS|muerteDiamante
-  - first:
-      74: 299347679994998111
-    second: RUNAS|MuerteObelisco1
-  - first:
-      74: 1342580758034588309
-    second: RUNAS|MuerteObelisco2
-  - first:
-      74: -8756040133774851612
-    second: RUNAS|MuerteObelisco3
-  - first:
-      74: 4264219088361036412
-    second: RUNAS|MuerteObelisco4
-  - first:
-      74: -5771790602107285996
-    second: RUNAS|muerteRunas
-  - first:
-      74: 2736635281398656570
-    second: Obelisco.001|DiamanteIDLE
-  - first:
-      74: -2231085048479869312
-    second: Obelisco.001|muerteDiamante
-  - first:
-      74: -5291532769442835128
-    second: Obelisco.001|MuerteObelisco1
-  - first:
-      74: -4835832714871845314
-    second: Obelisco.001|MuerteObelisco2
-  - first:
-      74: -5667791743452747279
-    second: Obelisco.001|MuerteObelisco3
-  - first:
-      74: -483616191826793401
-    second: Obelisco.001|MuerteObelisco4
-  - first:
-      74: 1930226840537961086
-    second: Obelisco.001|muerteRunas
-  - first:
-      74: -2643410607971739105
-    second: Obelisco.002|DiamanteIDLE
-  - first:
-      74: 5365943148093098702
-    second: Obelisco.002|muerteDiamante
-  - first:
-      74: 8031898807939081678
-    second: Obelisco.002|MuerteObelisco1
-  - first:
-      74: 5742819423872813895
-    second: Obelisco.002|MuerteObelisco2
-  - first:
-      74: -5287043064732086673
-    second: Obelisco.002|MuerteObelisco3
-  - first:
-      74: -370841255154651200
-    second: Obelisco.002|MuerteObelisco4
-  - first:
-      74: -3378268314756038060
-    second: Obelisco.002|muerteRunas
-  - first:
-      74: 6251408225006076365
-    second: Obelisco.003|DiamanteIDLE
-  - first:
-      74: 2081971270336183080
-    second: Obelisco.003|muerteDiamante
-  - first:
-      74: 1596577388808696770
-    second: Obelisco.003|MuerteObelisco1
-  - first:
-      74: -1216321397992060834
-    second: Obelisco.003|MuerteObelisco2
-  - first:
-      74: -4348497038051362506
-    second: Obelisco.003|MuerteObelisco3
-  - first:
-      74: -8428078311673008791
-    second: Obelisco.003|MuerteObelisco4
-  - first:
-      74: -8187864180289876452
-    second: Obelisco.003|muerteRunas
-  - first:
-      74: 1753509141560324495
-    second: Obelisco.004|DiamanteIDLE
-  - first:
-      74: -1789314460501237918
-    second: Obelisco.004|muerteDiamante
-  - first:
-      74: -1290462223179507016
-    second: Obelisco.004|MuerteObelisco1
-  - first:
-      74: -3282604072156508586
-    second: Obelisco.004|MuerteObelisco2
-  - first:
-      74: 3901306963373042107
-    second: Obelisco.004|MuerteObelisco3
-  - first:
-      74: 5948036937542088794
-    second: Obelisco.004|MuerteObelisco4
-  - first:
-      74: 379582293645449802
-    second: Obelisco.004|muerteRunas
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Camera
+    100002: Diamante
+    100004: Light
+    100006: //RootNode
+    100008: Obelisco
+    100010: Obelisco.001
+    100012: Obelisco.002
+    100014: Obelisco.003
+    100016: Obelisco.004
+    100018: RUNAS
+    400000: Camera
+    400002: Diamante
+    400004: Light
+    400006: //RootNode
+    400008: Obelisco
+    400010: Obelisco.001
+    400012: Obelisco.002
+    400014: Obelisco.003
+    400016: Obelisco.004
+    400018: RUNAS
+    2000000: Camera
+    2100000: piedra
+    2100002: runas
+    2300000: Diamante
+    2300002: Obelisco
+    2300004: Obelisco.001
+    2300006: Obelisco.002
+    2300008: Obelisco.003
+    2300010: Obelisco.004
+    2300012: RUNAS
+    3300000: Diamante
+    3300002: Obelisco
+    3300004: Obelisco.001
+    3300006: Obelisco.002
+    3300008: Obelisco.003
+    3300010: Obelisco.004
+    3300012: RUNAS
+    4300000: Obelisco
+    4300002: Diamante
+    4300004: RUNAS
+    4300006: Obelisco.001
+    4300008: Obelisco.002
+    4300010: Obelisco.003
+    4300012: Obelisco.004
+    7400000: Diamante|DiamanteIDLE
+    7400002: Diamante|muerteDiamante
+    7400004: Diamante|MuerteObelisco1
+    7400006: Diamante|MuerteObelisco2
+    7400008: Diamante|MuerteObelisco3
+    7400010: Diamante|MuerteObelisco4
+    7400012: Diamante|muerteRunas
+    7400014: RUNAS|DiamanteIDLE
+    7400016: RUNAS|muerteDiamante
+    7400018: RUNAS|MuerteObelisco1
+    7400020: RUNAS|MuerteObelisco2
+    7400022: RUNAS|MuerteObelisco3
+    7400024: RUNAS|MuerteObelisco4
+    7400026: RUNAS|muerteRunas
+    7400028: Obelisco.001|DiamanteIDLE
+    7400030: Obelisco.001|muerteDiamante
+    7400032: Obelisco.001|MuerteObelisco1
+    7400034: Obelisco.001|MuerteObelisco2
+    7400036: Obelisco.001|MuerteObelisco3
+    7400038: Obelisco.001|MuerteObelisco4
+    7400040: Obelisco.001|muerteRunas
+    7400042: Obelisco.002|DiamanteIDLE
+    7400044: Obelisco.002|muerteDiamante
+    7400046: Obelisco.002|MuerteObelisco1
+    7400048: Obelisco.002|MuerteObelisco2
+    7400050: Obelisco.002|MuerteObelisco3
+    7400052: Obelisco.002|MuerteObelisco4
+    7400054: Obelisco.002|muerteRunas
+    7400056: Obelisco.003|DiamanteIDLE
+    7400058: Obelisco.003|muerteDiamante
+    7400060: Obelisco.003|MuerteObelisco1
+    7400062: Obelisco.003|MuerteObelisco2
+    7400064: Obelisco.003|MuerteObelisco3
+    7400066: Obelisco.003|MuerteObelisco4
+    7400068: Obelisco.003|muerteRunas
+    7400070: Obelisco.004|DiamanteIDLE
+    7400072: Obelisco.004|muerteDiamante
+    7400074: Obelisco.004|MuerteObelisco1
+    7400076: Obelisco.004|MuerteObelisco2
+    7400078: Obelisco.004|MuerteObelisco3
+    7400080: Obelisco.004|MuerteObelisco4
+    7400082: Obelisco.004|muerteRunas
+    9500000: //RootNode
+    10800000: Light
   externalObjects: {}
   materials:
-    materialImportMode: 1
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -163,7 +122,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Diamante|DiamanteIDLE
       takeName: Diamante|DiamanteIDLE
-      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -192,7 +150,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Diamante|muerteDiamante
       takeName: Diamante|muerteDiamante
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -221,7 +178,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Diamante|MuerteObelisco1
       takeName: Diamante|MuerteObelisco1
-      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -250,7 +206,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Diamante|MuerteObelisco2
       takeName: Diamante|MuerteObelisco2
-      internalID: 0
       firstFrame: 0
       lastFrame: 41
       wrapMode: 0
@@ -279,7 +234,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Diamante|MuerteObelisco3
       takeName: Diamante|MuerteObelisco3
-      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -308,7 +262,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Diamante|MuerteObelisco4
       takeName: Diamante|MuerteObelisco4
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -337,7 +290,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Diamante|muerteRunas
       takeName: Diamante|muerteRunas
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -366,7 +318,6 @@ ModelImporter:
     - serializedVersion: 16
       name: RUNAS|DiamanteIDLE
       takeName: RUNAS|DiamanteIDLE
-      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -395,7 +346,6 @@ ModelImporter:
     - serializedVersion: 16
       name: RUNAS|muerteDiamante
       takeName: RUNAS|muerteDiamante
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -424,7 +374,6 @@ ModelImporter:
     - serializedVersion: 16
       name: RUNAS|MuerteObelisco1
       takeName: RUNAS|MuerteObelisco1
-      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -453,7 +402,6 @@ ModelImporter:
     - serializedVersion: 16
       name: RUNAS|MuerteObelisco2
       takeName: RUNAS|MuerteObelisco2
-      internalID: 0
       firstFrame: 0
       lastFrame: 41
       wrapMode: 0
@@ -482,7 +430,6 @@ ModelImporter:
     - serializedVersion: 16
       name: RUNAS|MuerteObelisco3
       takeName: RUNAS|MuerteObelisco3
-      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -511,7 +458,6 @@ ModelImporter:
     - serializedVersion: 16
       name: RUNAS|MuerteObelisco4
       takeName: RUNAS|MuerteObelisco4
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -540,7 +486,6 @@ ModelImporter:
     - serializedVersion: 16
       name: RUNAS|muerteRunas
       takeName: RUNAS|muerteRunas
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -569,7 +514,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.001|DiamanteIDLE
       takeName: Obelisco.001|DiamanteIDLE
-      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -598,7 +542,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.001|muerteDiamante
       takeName: Obelisco.001|muerteDiamante
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -627,7 +570,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.001|MuerteObelisco1
       takeName: Obelisco.001|MuerteObelisco1
-      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -656,7 +598,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.001|MuerteObelisco2
       takeName: Obelisco.001|MuerteObelisco2
-      internalID: 0
       firstFrame: 0
       lastFrame: 41
       wrapMode: 0
@@ -685,7 +626,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.001|MuerteObelisco3
       takeName: Obelisco.001|MuerteObelisco3
-      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -714,7 +654,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.001|MuerteObelisco4
       takeName: Obelisco.001|MuerteObelisco4
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -743,7 +682,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.001|muerteRunas
       takeName: Obelisco.001|muerteRunas
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -772,7 +710,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.002|DiamanteIDLE
       takeName: Obelisco.002|DiamanteIDLE
-      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -801,7 +738,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.002|muerteDiamante
       takeName: Obelisco.002|muerteDiamante
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -830,7 +766,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.002|MuerteObelisco1
       takeName: Obelisco.002|MuerteObelisco1
-      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -859,7 +794,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.002|MuerteObelisco2
       takeName: Obelisco.002|MuerteObelisco2
-      internalID: 0
       firstFrame: 0
       lastFrame: 41
       wrapMode: 0
@@ -888,7 +822,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.002|MuerteObelisco3
       takeName: Obelisco.002|MuerteObelisco3
-      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -917,7 +850,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.002|MuerteObelisco4
       takeName: Obelisco.002|MuerteObelisco4
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -946,7 +878,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.002|muerteRunas
       takeName: Obelisco.002|muerteRunas
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -975,7 +906,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.003|DiamanteIDLE
       takeName: Obelisco.003|DiamanteIDLE
-      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -1004,7 +934,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.003|muerteDiamante
       takeName: Obelisco.003|muerteDiamante
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -1033,7 +962,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.003|MuerteObelisco1
       takeName: Obelisco.003|MuerteObelisco1
-      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -1062,7 +990,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.003|MuerteObelisco2
       takeName: Obelisco.003|MuerteObelisco2
-      internalID: 0
       firstFrame: 0
       lastFrame: 41
       wrapMode: 0
@@ -1091,7 +1018,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.003|MuerteObelisco3
       takeName: Obelisco.003|MuerteObelisco3
-      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -1120,7 +1046,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.003|MuerteObelisco4
       takeName: Obelisco.003|MuerteObelisco4
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -1149,7 +1074,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.003|muerteRunas
       takeName: Obelisco.003|muerteRunas
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -1178,7 +1102,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.004|DiamanteIDLE
       takeName: Obelisco.004|DiamanteIDLE
-      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -1207,7 +1130,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.004|muerteDiamante
       takeName: Obelisco.004|muerteDiamante
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -1236,7 +1158,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.004|MuerteObelisco1
       takeName: Obelisco.004|MuerteObelisco1
-      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -1265,7 +1186,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.004|MuerteObelisco2
       takeName: Obelisco.004|MuerteObelisco2
-      internalID: 0
       firstFrame: 0
       lastFrame: 41
       wrapMode: 0
@@ -1294,7 +1214,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.004|MuerteObelisco3
       takeName: Obelisco.004|MuerteObelisco3
-      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -1323,7 +1242,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.004|MuerteObelisco4
       takeName: Obelisco.004|MuerteObelisco4
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -1352,7 +1270,6 @@ ModelImporter:
     - serializedVersion: 16
       name: Obelisco.004|muerteRunas
       takeName: Obelisco.004|muerteRunas
-      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -1385,7 +1302,6 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -1393,19 +1309,18 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.001
-    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -1414,10 +1329,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
   importAnimation: 1
+  copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -1427,16 +1342,13 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
