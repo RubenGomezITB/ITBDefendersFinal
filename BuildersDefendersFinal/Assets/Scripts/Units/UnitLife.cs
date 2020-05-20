@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-public class UnitLife : MonoBehaviour
+public class UnitLife : MonoBehaviour, IPunObservable
 {
     public float life;
     public PhotonView PhotonView;
@@ -27,10 +27,23 @@ public class UnitLife : MonoBehaviour
 
     private void destroyThisObject()
     {
-        if (PhotonView.IsMine)
+        if (PhotonNetwork.IsMasterClient)
         {
              PhotonNetwork.Destroy(gameObject);
         }
        
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(life);
+        }
+        else
+        {
+            // Network player, receive data
+            life = (int)stream.ReceiveNext();
+        }
     }
 }

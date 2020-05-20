@@ -374,6 +374,8 @@
           <e p="Player" t="Include">
             <e p="PlayerName.cs" t="Include" />
           </e>
+          <e p="PlayManager.cs" t="Include" />
+          <e p="RoundCounter.cs" t="Include" />
           <e p="Spawns" t="Include">
             <e p="AttackUnitSpawner.cs" t="Include" />
             <e p="Dragdrop.cs" t="Include" />

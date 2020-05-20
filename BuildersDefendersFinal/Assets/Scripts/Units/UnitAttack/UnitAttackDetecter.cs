@@ -26,6 +26,14 @@ public class UnitAttackDetecter : MonoBehaviour
         _boxCollider = GetComponent<BoxCollider>();
     }
 
+    private void Update()
+    {
+        if (PhotonNetwork.IsMasterClient == false)
+        {
+            return;
+        }
+    }
+
     private void FixedUpdate()
     {
         

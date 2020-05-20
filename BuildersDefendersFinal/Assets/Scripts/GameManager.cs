@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviourPunCallbacks
 {
     public static GameManager instance;
-    public GameObject camara, camaraHosted;
+    public GameObject camara, camaraHosted, camaraClientDefensa, camaraClientAtaque;
     public bool playing = false;
     private Scene currentScene;
     private void Awake()
@@ -41,10 +41,12 @@ public class GameManager : MonoBehaviourPunCallbacks
             if (PhotonNetwork.IsMasterClient)
             {
                 Instantiate(camara);
+                Instantiate(camaraHosted);
             }
             else
             {
-                Instantiate(camaraHosted);
+                Instantiate(camaraClientDefensa);
+                Instantiate(camaraClientAtaque);
             }
 
             playing = true;
@@ -81,6 +83,12 @@ public class GameManager : MonoBehaviourPunCallbacks
         PhotonNetwork.Disconnect();
     }
 
+    public override void OnLeftRoom()
+    {
+        base.OnLeftRoom();
+        SceneManager.LoadScene(0);
+    }
+
 
     public override void OnPlayerLeftRoom(Player other)
     {
@@ -96,7 +104,6 @@ public class GameManager : MonoBehaviourPunCallbacks
         if (playing && PhotonNetwork.CurrentRoom.PlayerCount < 2)
         {
             PhotonNetwork.LeaveRoom();
-            SceneManager.LoadScene(0);
             playing = false;
         }
     }
