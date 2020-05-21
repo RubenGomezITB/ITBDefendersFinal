@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class MainScreenButtonManager : MonoBehaviour
 {
@@ -169,6 +171,10 @@ public class MainScreenButtonManager : MonoBehaviour
             changeLogScreen.SetActive(true);
         }
         chGoBackBtnIsActive = !chGoBackBtnIsActive;
+    }
+
+    public void playGame() {
+        SceneManager.LoadScene("PlayScene", LoadSceneMode.Single);
     }
 
 }

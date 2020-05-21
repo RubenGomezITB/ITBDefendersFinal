@@ -17,7 +17,8 @@ public class obeliscoAnimScript : MonoBehaviour
 
     private void onUnitDied(object sender, EventArgs e)
     {
-        animator.SetBool("morir",true);
+        //animator.SetBool("death", true);
+        animator.SetTrigger("death");
     }
 
 }
