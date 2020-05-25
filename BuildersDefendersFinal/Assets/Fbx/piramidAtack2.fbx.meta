@@ -1,14 +1,11 @@
 fileFormatVersion: 2
-guid: ce3f23375866c444fbc3f54ddccfcc7c
+guid: 443a8d581cd442044b732294da7dcd1b
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
-      41386430: 2186277476908879412
-    second: ImportLogs
-  - first:
-      74: -623603649343465320
-    second: Scene
+      74: -3100628101864396295
+    second: Sphere|SphereAction
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -95,7 +92,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

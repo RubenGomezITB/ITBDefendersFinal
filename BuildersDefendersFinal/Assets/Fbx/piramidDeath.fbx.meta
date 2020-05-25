@@ -1,14 +1,20 @@
 fileFormatVersion: 2
-guid: ce3f23375866c444fbc3f54ddccfcc7c
+guid: 8162d2143cd184c4db7f817c3a869fa8
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
-      41386430: 2186277476908879412
-    second: ImportLogs
+      74: 4805278946784155910
+    second: Cone.005|Cone.005Action
   - first:
-      74: -623603649343465320
-    second: Scene
+      74: -5247740824010494599
+    second: Cone.005|Cone.006Action
+  - first:
+      74: -8623474952536225981
+    second: Cone.006|Cone.005Action
+  - first:
+      74: -2512343048809998332
+    second: Cone.006|Cone.006Action
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -95,7 +101,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
