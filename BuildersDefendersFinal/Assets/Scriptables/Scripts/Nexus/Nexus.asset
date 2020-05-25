@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Nexus
   m_EditorClassIdentifier: 
   Name: 0
-  Life: 0
+  Life: 2000
   Damage: 0
   Range: 0
   cost: 0

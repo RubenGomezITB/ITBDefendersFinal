@@ -1,65 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6242437579729895015
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6795296721080065224}
-  - component: {fileID: 4151793203346397945}
-  - component: {fileID: 7627735166211872151}
-  m_Layer: 0
-  m_Name: DetectRange
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6795296721080065224
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6242437579729895015}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4271092472408101528}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4151793203346397945
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6242437579729895015}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7627735166211872151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6242437579729895015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a82d99a0ccf4984099487981035f6df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DefenseTag: attack
-  target: {fileID: 0}
-  isOnDetectRange: 0
 --- !u!1 &7662429223538329580
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,6 +12,8 @@ GameObject:
   - component: {fileID: 6051442446508673827}
   - component: {fileID: 1501991108524815911}
   - component: {fileID: 309825536826797270}
+  - component: {fileID: 6085181802334503572}
+  - component: {fileID: 1165619349312654235}
   m_Layer: 0
   m_Name: TowerShooter
   m_TagString: Untagged
@@ -91,7 +33,7 @@ Transform:
   m_LocalScale: {x: 0.29686, y: 0.29686, z: 0.29686}
   m_Children: []
   m_Father: {fileID: 4271092472408101528}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6051442446508673827
 MeshFilter:
@@ -119,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 392bb12a5e08887409122112baeeb296, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -151,8 +93,41 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6085181802334503572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7662429223538329580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d03600942000000ad0360094200000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOnAttackRange: 0
+  _us: {fileID: 11400000, guid: ff472fae1f60bc74780debb6f558a654, type: 2}
+  _life: {fileID: 0}
+  DetectRange: {fileID: 1165619349312654235}
+  attackOnCooldown: 0
+  isAnAttackUnit: 0
+--- !u!114 &1165619349312654235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7662429223538329580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a82d99a0ccf4984099487981035f6df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefenseTag: attack
+  target: {fileID: 0}
+  isOnDetectRange: 0
 --- !u!1 &8490172487562541219
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,9 +142,11 @@ GameObject:
   - component: {fileID: 595546057188565951}
   - component: {fileID: -3285611891457346415}
   - component: {fileID: -1150414895253309923}
+  - component: {fileID: -6811668144355898080}
+  - component: {fileID: 6697803472469605502}
   m_Layer: 0
   m_Name: Tower
-  m_TagString: Untagged
+  m_TagString: defense
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,7 +162,6 @@ Transform:
   m_LocalPosition: {x: -8.417, y: 0.51, z: 3.500165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6795296721080065224}
   - {fileID: 552038606364090721}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -216,7 +192,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 392bb12a5e08887409122112baeeb296, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -263,7 +239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 0
-  _us: {fileID: 0}
+  PhotonView: {fileID: -6811668144355898080}
+  _us: {fileID: 11400000, guid: ff472fae1f60bc74780debb6f558a654, type: 2}
 --- !u!114 &-1150414895253309923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,3 +253,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116973384ecfbdb4a85182d0b68376a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6811668144355898080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8490172487562541219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 6697803472469605502}
+  - {fileID: -3285611891457346415}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &6697803472469605502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8490172487562541219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0

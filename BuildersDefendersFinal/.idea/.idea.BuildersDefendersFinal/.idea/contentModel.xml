@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\ChibitOwO\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\ChibitOwO\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_BuildersDefendersFinal.-1385499524.00" t="ExcludeRecursive" />
+    <e p="C:\Users\ChibitOwO\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ChibitOwO\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_BuildersDefendersFinal.-1385499524.00" t="ExcludeRecursive" />
     <e p="C:\Users\ChibitOwO\Documents\ITBDefendersFinal\BuildersDefendersFinal" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -367,8 +367,17 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="GameManager.cs" t="Include" />
+          <e p="Photon" t="Include">
+            <e p="Launcher.cs" t="Include" />
+          </e>
+          <e p="Player" t="Include">
+            <e p="PlayerName.cs" t="Include" />
+          </e>
+          <e p="PlayManager.cs" t="Include" />
+          <e p="RoundCounter.cs" t="Include" />
           <e p="Spawns" t="Include">
-            <e p="AttackUnitSpawner.cs" t="Include" />
+            <e p="Dragdrop.cs" t="Include" />
           </e>
           <e p="Units" t="Include">
             <e p="UnitAttack" t="Include">

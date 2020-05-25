@@ -19,25 +19,19 @@ public class UnitDetectRange : MonoBehaviour
     {
         CapsuleCollider = GetComponent<CapsuleCollider>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(DefenseTag) && _unitDie == null)
         {
             isOnDetectRange = true;
             _unitDie = other.GetComponent<UnitDie>();
-            _unitDie.OnDefenseUnitDied += OnOnDefenseUnitDied;
+            _unitDie.OnDefenseUnitDied += OnDefenseUnitDied;
             target = other.gameObject;
         }
     }
 
-    private void OnOnDefenseUnitDied(object sender, EventArgs e)
+    private void OnDefenseUnitDied(object sender, EventArgs e)
     {
         isOnDetectRange = false;
         _unitDie = null;
@@ -48,7 +42,7 @@ public class UnitDetectRange : MonoBehaviour
     {
         if (other.CompareTag(DefenseTag))
         {
-            _unitDie.OnDefenseUnitDied -= OnOnDefenseUnitDied;
+            _unitDie.OnDefenseUnitDied -= OnDefenseUnitDied;
             _unitDie = null;
             isOnDetectRange = false;
             target = null;

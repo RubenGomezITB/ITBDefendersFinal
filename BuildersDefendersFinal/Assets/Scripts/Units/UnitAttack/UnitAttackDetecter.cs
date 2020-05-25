@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class UnitAttackDetecter : MonoBehaviour
@@ -15,26 +16,40 @@ public class UnitAttackDetecter : MonoBehaviour
     public UnitDetectRange DetectRange;
 
     public bool attackOnCooldown = false;
+    public bool isAnAttackUnit = false;
+    private PhotonView PhotonView;
 
  
     void Start()
     {
+        PhotonView = GetComponentInParent<PhotonView>();
         _boxCollider = GetComponent<BoxCollider>();
+    }
+
+    private void Update()
+    {
+        if (PhotonNetwork.IsMasterClient == false)
+        {
+            return;
+        }
     }
 
     private void FixedUpdate()
     {
         
-        if (DetectRange.isOnDetectRange && !isOnAttackRange)
+        if (DetectRange.isOnDetectRange && !isOnAttackRange && isAnAttackUnit)
         {
-            transform.parent.position =
-                Vector3.MoveTowards(transform.parent.position, DetectRange.target.transform.position, .01f);
+            if (PhotonView.IsMine)
+            {
+                 transform.parent.position =
+                                Vector3.MoveTowards(transform.parent.position, DetectRange.target.transform.position, .01f);
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (DetectRange.isOnDetectRange && other.tag == (DetectRange.DefenseTag))
+        if (other.tag == (DetectRange.DefenseTag))
         {
             isOnAttackRange = true;
             _unitDie = other.GetComponent<UnitDie>();

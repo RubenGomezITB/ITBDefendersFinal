@@ -16,9 +16,11 @@ GameObject:
   - component: {fileID: 1881812900273966032}
   - component: {fileID: 1881812900273966062}
   - component: {fileID: 1513698437057256207}
+  - component: {fileID: -148531954199644599}
+  - component: {fileID: 1263617322582749790}
   m_Layer: 9
   m_Name: Unidad ataque
-  m_TagString: Untagged
+  m_TagString: attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,8 +136,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _us: {fileID: 11400000, guid: 633ed94cabf99994c9e75f436b8f9767, type: 2}
+  HostNexus: {fileID: 4779524392363531862, guid: a4b1c787bcfc3c2448dba24032d5d50f,
+    type: 3}
+  ClientNexus: {fileID: 6047323687532226831, guid: 88650d2d94c2d2149ac1a07151480fe5,
+    type: 3}
   nexus: {fileID: 286387507830886060, guid: afa406d2850653f4fbc81b5e3aac6bb4, type: 3}
   agent: {fileID: 1881812900273966035}
+  PhotonView: {fileID: -148531954199644599}
 --- !u!114 &1881812900273966062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +168,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 0
+  PhotonView: {fileID: -148531954199644599}
   _us: {fileID: 11400000, guid: 633ed94cabf99994c9e75f436b8f9767, type: 2}
+--- !u!114 &-148531954199644599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881812900273966057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 1263617322582749790}
+  - {fileID: 1513698437057256207}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &1263617322582749790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881812900273966057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
 --- !u!1 &7352910873469364176
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,6 +270,7 @@ MonoBehaviour:
   _life: {fileID: 0}
   DetectRange: {fileID: 2555863710505047810}
   attackOnCooldown: 0
+  isAnAttackUnit: 1
 --- !u!1 &8432374289758424118
 GameObject:
   m_ObjectHideFlags: 0
