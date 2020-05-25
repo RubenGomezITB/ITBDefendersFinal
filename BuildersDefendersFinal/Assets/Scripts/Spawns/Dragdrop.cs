@@ -17,19 +17,25 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
     private Vector3 touchPosition;
     private float distance = 10000;
     public LayerMask layer;
+    public Camera camaraHost, camaraClient, camara;
 
     private void Start()
     {
         thisObject = gameObject;
         _rectTransform = GetComponent<RectTransform>();
         initialTransform = thisObject.GetComponent<RectTransform>().anchoredPosition;
+        if (PhotonNetwork.IsMasterClient)
+        {
+            camara = camaraHost;
+        }
+        else camara = camaraClient;
     }
 
     private void Update()
     {
         if (objectToInstantiate != null) {
                  
-            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            Ray ray = camara.ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, distance, layer))
             {
@@ -75,7 +81,7 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
         {
             _rectTransform.anchoredPosition = initialTransform;
             canMove = false;
-            touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            touchPosition = camara.ScreenToWorldPoint(touch.position);
             if (objectToInstantiate == null)
             {
                 objectToInstantiate = Instantiate(objectPreview,

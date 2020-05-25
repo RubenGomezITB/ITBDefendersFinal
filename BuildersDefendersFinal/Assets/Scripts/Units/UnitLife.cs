@@ -18,20 +18,19 @@ public class UnitLife : MonoBehaviour, IPunObservable
 
     public void recibeDamage(float damage)
     {
-        life -= damage;
-        if (life <= 0)
+        if (PhotonNetwork.IsMasterClient)
         {
-            destroyThisObject();
+            life -= damage;
+            if (life <= 0)
+            {
+                destroyThisObject();
+            }
         }
     }
 
     private void destroyThisObject()
     {
-        if (PhotonNetwork.IsMasterClient)
-        {
-             PhotonNetwork.Destroy(gameObject);
-        }
-       
+        PhotonNetwork.Destroy(gameObject);
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -43,7 +42,7 @@ public class UnitLife : MonoBehaviour, IPunObservable
         else
         {
             // Network player, receive data
-            life = (int)stream.ReceiveNext();
+            life = (int) stream.ReceiveNext();
         }
     }
 }

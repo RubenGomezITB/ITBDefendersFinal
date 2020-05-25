@@ -136,6 +136,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _us: {fileID: 11400000, guid: 633ed94cabf99994c9e75f436b8f9767, type: 2}
+  HostNexus: {fileID: 4779524392363531862, guid: a4b1c787bcfc3c2448dba24032d5d50f,
+    type: 3}
+  ClientNexus: {fileID: 6047323687532226831, guid: 88650d2d94c2d2149ac1a07151480fe5,
+    type: 3}
   nexus: {fileID: 286387507830886060, guid: afa406d2850653f4fbc81b5e3aac6bb4, type: 3}
   agent: {fileID: 1881812900273966035}
   PhotonView: {fileID: -148531954199644599}

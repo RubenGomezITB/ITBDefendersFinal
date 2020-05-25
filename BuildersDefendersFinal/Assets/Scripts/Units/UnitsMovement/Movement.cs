@@ -7,8 +7,8 @@ using UnityEngine.AI;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private UnitsScriptable _us;
-    [SerializeField] private GameObject nexus;
-    
+    [SerializeField] private GameObject HostNexus, ClientNexus, nexus;
+
     public NavMeshAgent agent;
 
     private UnitDetectRange _unitAttackRange;
@@ -18,28 +18,28 @@ public class Movement : MonoBehaviour
     void Start()
     {
         _unitAttackRange = GetComponentInChildren<UnitDetectRange>();
+        if (PhotonNetwork.IsMasterClient)
+        {
+            nexus = HostNexus;
+        }
+        else nexus = ClientNexus;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!PhotonView.IsMine)
+        if (PhotonNetwork.IsMasterClient)
         {
-            return;
-        }
-        if (_unitAttackRange.isOnDetectRange)
-        {
-            agent.isStopped = true;
-            /*if (expr)
+            if (_unitAttackRange.isOnDetectRange)
             {
-                
-            }*/
-        }
-        else
-        {
-            agent.speed = _us.movSpeed;
-            agent.isStopped = false;
-            agent.SetDestination(nexus.transform.position);
+                agent.isStopped = true;
+            }
+            else
+            {
+                agent.speed = _us.movSpeed;
+                agent.isStopped = false;
+                agent.SetDestination(nexus.transform.position);
+            }
         }
     }
 }

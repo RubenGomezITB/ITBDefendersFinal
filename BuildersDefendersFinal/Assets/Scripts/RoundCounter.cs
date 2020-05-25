@@ -46,6 +46,7 @@ public class RoundCounter : MonoBehaviourPun
         youLose.enabled = true;
         yield return new WaitForSeconds(3);
         PhotonNetwork.LeaveRoom();
+        Destroy(gameObject);
     }
 
     private IEnumerator Win()
@@ -53,6 +54,7 @@ public class RoundCounter : MonoBehaviourPun
         youWin.enabled = true;
         yield return new WaitForSeconds(3);
         PhotonNetwork.LeaveRoom();
+        Destroy(gameObject);
     }
 
    

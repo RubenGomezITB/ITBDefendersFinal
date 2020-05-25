@@ -377,7 +377,6 @@
           <e p="PlayManager.cs" t="Include" />
           <e p="RoundCounter.cs" t="Include" />
           <e p="Spawns" t="Include">
-            <e p="AttackUnitSpawner.cs" t="Include" />
             <e p="Dragdrop.cs" t="Include" />
           </e>
           <e p="Units" t="Include">
