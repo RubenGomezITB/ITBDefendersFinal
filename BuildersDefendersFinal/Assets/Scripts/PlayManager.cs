@@ -26,11 +26,11 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Update()
     {
-
+        Text.text = Mathf.Floor(timeRemain).ToString();
         if (roundStarted && PhotonNetwork.IsMasterClient)
         {
             timeRemain -= Time.deltaTime;
-            Text.text = Mathf.Floor(timeRemain).ToString();
+
 
             if (timeRemain <= 0.0f)
             {
@@ -83,7 +83,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
         else
         {
             // Network player, receive data
-            timeRemain = (int) stream.ReceiveNext();
+            timeRemain = (float) stream.ReceiveNext();
         }
     }
 }

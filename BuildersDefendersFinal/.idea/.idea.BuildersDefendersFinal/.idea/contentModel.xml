@@ -368,6 +368,9 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="GameManager.cs" t="Include" />
+          <e p="obeliscoAnimation" t="Include">
+            <e p="obeliscoAnimScript.cs" t="Include" />
+          </e>
           <e p="Photon" t="Include">
             <e p="Launcher.cs" t="Include" />
           </e>
@@ -378,6 +381,15 @@
           <e p="RoundCounter.cs" t="Include" />
           <e p="Spawns" t="Include">
             <e p="Dragdrop.cs" t="Include" />
+            <e p="RaycastHitter.cs" t="Include" />
+          </e>
+          <e p="startScreen" t="Include">
+            <e p="ChangeStartScreenPanel.cs" t="Include" />
+            <e p="friendsList.cs" t="Include" />
+            <e p="inGameButtonManager.cs" t="Include" />
+            <e p="introVideoPlayerScript.cs" t="Include" />
+            <e p="mainScreenButtonManager.cs" t="Include" />
+            <e p="skillsTreebuttonScript.cs" t="Include" />
           </e>
           <e p="Units" t="Include">
             <e p="UnitAttack" t="Include">

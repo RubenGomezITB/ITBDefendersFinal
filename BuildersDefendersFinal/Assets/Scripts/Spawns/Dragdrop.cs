@@ -18,6 +18,9 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
     private float distance = 10000;
     public LayerMask layer;
     public Camera camaraHost, camaraClient, camara;
+    private RaycastHitter.spawnZones SpawnZone;
+    public bool ataque;
+    RaycastHit hit;
 
     private void Start()
     {
@@ -27,30 +30,43 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
         if (PhotonNetwork.IsMasterClient)
         {
             camara = camaraHost;
+            if (ataque)
+            {
+                SpawnZone = RaycastHitter.spawnZones.hostAttack;
+            }
+            else
+            {
+                SpawnZone = RaycastHitter.spawnZones.hostDefense;
+            }
         }
-        else camara = camaraClient;
+        else
+        {
+            camara = camaraClient;
+            if (ataque)
+            {
+                SpawnZone = RaycastHitter.spawnZones.clientAttack;
+            }
+            else
+            {
+                SpawnZone = RaycastHitter.spawnZones.clientDefense;
+            }
+        }
     }
 
     private void Update()
     {
-        if (objectToInstantiate != null) {
-                 
+        if (objectToInstantiate != null)
+        {
             Ray ray = camara.ScreenPointToRay(Input.GetTouch(0).position);
-            RaycastHit hit;
+
             if (Physics.Raycast(ray, out hit, distance, layer))
             {
-                
                 Vector3 position = hit.point;
                 Debug.DrawLine(ray.origin, hit.point, Color.red);
                 objectToInstantiate.transform.position = new Vector3(position.x, 0.5633333f, position.z);
-            }            
+            }
         }
     }
- /*touch = Input.GetTouch(0);
-                touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-         
-                Debug.Log(objectToInstantiate.transform.position);
-                */
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -63,11 +79,13 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
     public void OnEndDrag(PointerEventData eventData)
     {
         canMove = true;
+        if (hit.transform.gameObject.GetComponent<RaycastHitter>().SpawnZone == SpawnZone)
+        {
+              PhotonNetwork.Instantiate(enemy.name, objectToInstantiate.transform.position, Quaternion.identity);
+        }
         //Instantiate(enemy, objectToInstantiate.transform.position, Quaternion.identity);
-        PhotonNetwork.Instantiate(enemy.name, objectToInstantiate.transform.position, Quaternion.identity);
         Destroy(objectToInstantiate.gameObject);
         objectToInstantiate = null;
-        
     }
 
     public void OnDrag(PointerEventData eventData)

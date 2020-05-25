@@ -42,7 +42,7 @@ public class UnitLife : MonoBehaviour, IPunObservable
         else
         {
             // Network player, receive data
-            life = (int) stream.ReceiveNext();
+            life = (float) stream.ReceiveNext();
         }
     }
 }
