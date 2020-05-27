@@ -15,6 +15,8 @@ public class UnitsScriptable : ScriptableObject
     public float attSpeed;
     public float movSpeed;
     public int lvl;
+    public Sprite cardArt;
+    public UnitsScriptable nextLvlCard;
 
     public String GetUnitNamePerLenguage(UnitsTranslation.Languages lenguages)
     {

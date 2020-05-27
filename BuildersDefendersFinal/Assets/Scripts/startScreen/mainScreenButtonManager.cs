@@ -17,6 +17,10 @@ public class MainScreenButtonManager : MonoBehaviour
     [SerializeField] private bool crGoBackBtnIsActive;
     public List<GameObject> ScreensList = new List<GameObject>();
     public List<Button> SettingsBtns = new List<Button>();
+    public List<Button> Cards = new List<Button>();
+    private List<bool> UpgradePanelBools = new List<bool> { false, false, false, false };
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -171,6 +175,64 @@ public class MainScreenButtonManager : MonoBehaviour
             changeLogScreen.SetActive(true);
         }
         chGoBackBtnIsActive = !chGoBackBtnIsActive;
+    }
+
+    public void displayUpgradePanel1()
+    {
+
+        if (UpgradePanelBools[0])
+        {
+            Cards[0].transform.GetChild(0).gameObject.SetActive(false);
+        }
+        else
+        {
+            Cards[0].transform.GetChild(0).gameObject.SetActive(true);
+        }
+        UpgradePanelBools[0] = !UpgradePanelBools[0];
+    }
+
+    public void displayUpgradePanel2()
+    {
+
+        if (UpgradePanelBools[1])
+        {
+            Cards[1].transform.GetChild(0).gameObject.SetActive(false);
+        }
+        else
+        {
+            Cards[1].transform.GetChild(0).gameObject.SetActive(true);
+        }
+        UpgradePanelBools[1] = !UpgradePanelBools[1];
+    }
+
+
+    public void displayUpgradePanel3()
+    {
+
+        if (UpgradePanelBools[2])
+        {
+            Cards[2].transform.GetChild(0).gameObject.SetActive(false);
+        }
+        else
+        {
+            Cards[2].transform.GetChild(0).gameObject.SetActive(true);
+        }
+        UpgradePanelBools[2] = !UpgradePanelBools[2];
+    }
+
+
+    public void displayUpgradePanel4()
+    {
+
+        if (UpgradePanelBools[3])
+        {
+            Cards[3].transform.GetChild(0).gameObject.SetActive(false);
+        }
+        else
+        {
+            Cards[3].transform.GetChild(0).gameObject.SetActive(true);
+        }
+        UpgradePanelBools[3] = !UpgradePanelBools[3];
     }
 
     public void playGame() {

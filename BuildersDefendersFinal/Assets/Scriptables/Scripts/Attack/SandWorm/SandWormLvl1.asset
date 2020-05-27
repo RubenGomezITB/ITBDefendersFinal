@@ -20,3 +20,5 @@ MonoBehaviour:
   attSpeed: 2
   movSpeed: 1
   lvl: 1
+  cardArt: {fileID: 21300000, guid: 990588fe3e768ca4996608d152e1a734, type: 3}
+  nextLvlCard: {fileID: 11400000, guid: c876a6323dc2984438c9a78aea4b7d0d, type: 2}
