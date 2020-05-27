@@ -1,0 +1,28 @@
+{
+	"AchievementIDs":[
+		{
+			"InternalID":"Begginer",
+			"AppleID":"",
+			"GoogleID":"1096833982008"
+		},
+		{
+			"InternalID":"Amateur",
+			"AppleID":"",
+			"GoogleID":"CgkIuLyZg_YfEAIQAQ"
+		},
+		{
+			"InternalID":"Expert",
+			"AppleID":"",
+			"GoogleID":""
+		}
+	],
+	"LeaderboardIDs":[],
+	"CloudVariables":[],
+	"AppleSupported":false,
+	"GoogleSupported":true,
+	"GoogleAppID":"1096833982008",
+	"GoogleSetupRun":true,
+	"DebugModeEnabled":false,
+	"Version":"2.6.8",
+	"SettingsLocation":"0"
+}
