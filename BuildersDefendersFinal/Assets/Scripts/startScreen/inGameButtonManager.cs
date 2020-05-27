@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class inGameButtonManager : MonoBehaviour
+public class InGameButtonManager : MonoBehaviour
 {
     [SerializeField] private bool settingsIsActive;
     [SerializeField] private bool soundIsActive;
@@ -18,12 +18,7 @@ public class inGameButtonManager : MonoBehaviour
         soundIsActive = true;
         musicIsActive = true;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void setSettings() {
         if (settingsIsActive)

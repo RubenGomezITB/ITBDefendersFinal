@@ -20,9 +20,9 @@ public class Movement : MonoBehaviour
         _unitAttackRange = GetComponentInChildren<UnitDetectRange>();
         if (PhotonNetwork.IsMasterClient)
         {
-            nexus = HostNexus;
+            nexus = ClientNexus;
         }
-        else nexus = ClientNexus;
+        else nexus = HostNexus;
     }
 
     // Update is called once per frame

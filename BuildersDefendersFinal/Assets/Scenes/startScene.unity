@@ -3781,7 +3781,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 4, y: -163.8}
+  m_AnchoredPosition: {x: 4, y: -163.79999}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &287528633
@@ -12110,25 +12110,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1029682b8a75fa34e959fce2864fc436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  friendsScreen: {fileID: 279270960}
-  creditsScreen: {fileID: 1805199317}
-  changeLogScreen: {fileID: 177993214}
+  friendsScreen: {fileID: 0}
+  creditsScreen: {fileID: 0}
+  changeLogScreen: {fileID: 0}
   friendsScreenIsActive: 0
   soundIsActive: 0
   musicIsActive: 0
   chGoBackBtnIsActive: 0
   crGoBackBtnIsActive: 0
-  ScreensList:
-  - {fileID: 874016963}
-  - {fileID: 1120864146}
-  - {fileID: 1538960733}
-  - {fileID: 1385149094}
-  - {fileID: 1028568853}
-  SettingsBtns:
-  - {fileID: 103861689}
-  - {fileID: 52053376}
-  - {fileID: 440839729}
-  - {fileID: 265654966}
+  ScreensList: []
+  SettingsBtns: []
   launcher: {fileID: 1890843150}
 --- !u!1 &1282566345
 GameObject:

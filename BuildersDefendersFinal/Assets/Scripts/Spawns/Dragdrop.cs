@@ -81,8 +81,9 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
         canMove = true;
         if (hit.transform.gameObject.GetComponent<RaycastHitter>().SpawnZone == SpawnZone)
         {
-              PhotonNetwork.Instantiate(enemy.name, objectToInstantiate.transform.position, Quaternion.identity);
+            PhotonNetwork.Instantiate(enemy.name, objectToInstantiate.transform.position, Quaternion.identity);
         }
+
         //Instantiate(enemy, objectToInstantiate.transform.position, Quaternion.identity);
         Destroy(objectToInstantiate.gameObject);
         objectToInstantiate = null;

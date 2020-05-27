@@ -121,6 +121,29 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &60234060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3401290334091400233, guid: 7db3536f57406784dbb5b536941ccf0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 980627804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &60234062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60234060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5985edc1be79dea49b06c59200d0fdd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsIsActive: 0
+  soundIsActive: 0
+  musicIsActive: 0
+  ScreensList: []
+  SettingsBtns: []
 --- !u!1 &66809488
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,8 +155,8 @@ GameObject:
   - component: {fileID: 66809492}
   - component: {fileID: 66809491}
   - component: {fileID: 66809490}
-  - component: {fileID: 66809489}
   - component: {fileID: 66809493}
+  - component: {fileID: 66809489}
   m_Layer: 9
   m_Name: zonaSpawnAtaqueHost
   m_TagString: Untagged
@@ -141,20 +164,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &66809489
-MeshCollider:
+--- !u!65 &66809489
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66809488}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &66809490
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -210,7 +232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66809488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.816, y: 0.18999994, z: 2.3799994}
+  m_LocalPosition: {x: -6.816, y: -0.18000007, z: 2.3799994}
   m_LocalScale: {x: 2.5, y: 1, z: 0.75}
   m_Children: []
   m_Father: {fileID: 0}
@@ -442,8 +464,8 @@ GameObject:
   - component: {fileID: 636196927}
   - component: {fileID: 636196926}
   - component: {fileID: 636196925}
-  - component: {fileID: 636196924}
   - component: {fileID: 636196928}
+  - component: {fileID: 636196924}
   m_Layer: 9
   m_Name: zonaSpawnDefensaHost
   m_TagString: Untagged
@@ -451,20 +473,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &636196924
-MeshCollider:
+--- !u!65 &636196924
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636196923}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &636196925
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -520,7 +541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636196923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.543, y: 0.19, z: -19}
+  m_LocalPosition: {x: -6.543, y: -0.18, z: -19}
   m_LocalScale: {x: 2.5, y: 0.99999976, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1026,8 +1047,8 @@ GameObject:
   - component: {fileID: 1007972599}
   - component: {fileID: 1007972598}
   - component: {fileID: 1007972597}
-  - component: {fileID: 1007972596}
   - component: {fileID: 1007972600}
+  - component: {fileID: 1007972596}
   m_Layer: 9
   m_Name: zonaSpawnAtaqueCliente
   m_TagString: Untagged
@@ -1035,20 +1056,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1007972596
-MeshCollider:
+--- !u!65 &1007972596
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007972595}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1007972597
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1104,7 +1124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007972595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.716, y: 0.18999994, z: -5.2}
+  m_LocalPosition: {x: -6.716, y: -0.18000007, z: -5.2}
   m_LocalScale: {x: 2.5, y: 1, z: 0.75}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1134,8 +1154,8 @@ GameObject:
   - component: {fileID: 1796059688}
   - component: {fileID: 1796059687}
   - component: {fileID: 1796059686}
-  - component: {fileID: 1796059685}
   - component: {fileID: 1796059689}
+  - component: {fileID: 1796059685}
   m_Layer: 9
   m_Name: zonaSpawnDefensaCliente
   m_TagString: Untagged
@@ -1143,20 +1163,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1796059685
-MeshCollider:
+--- !u!65 &1796059685
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796059684}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1796059686
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1212,7 +1231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796059684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.894, y: 0.18999994, z: 13.679999}
+  m_LocalPosition: {x: -6.894, y: -0.18000007, z: 13.679999}
   m_LocalScale: {x: 2.5, y: 0.9999998, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1311,7 +1330,7 @@ PrefabInstance:
     - target: {fileID: 4779524392363531866, guid: a4b1c787bcfc3c2448dba24032d5d50f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.55
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 4779524392363531866, guid: a4b1c787bcfc3c2448dba24032d5d50f,
         type: 3}
@@ -1405,7 +1424,7 @@ PrefabInstance:
     - target: {fileID: 6047323687532226837, guid: 88650d2d94c2d2149ac1a07151480fe5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.55
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 6047323687532226837, guid: 88650d2d94c2d2149ac1a07151480fe5,
         type: 3}
