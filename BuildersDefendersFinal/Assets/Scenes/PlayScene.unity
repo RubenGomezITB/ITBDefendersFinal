@@ -400,6 +400,7 @@ MonoBehaviour:
   timeRemain: 0
   roundStarted: 0
   decayBool: 0
+  load: 0
   Text: {fileID: 421854780}
   nexusMaster: {fileID: 422847420}
   nexusClient: {fileID: 618314763}
@@ -629,7 +630,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 980627814}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -916,7 +917,7 @@ PrefabInstance:
     - target: {fileID: 3401290334099794838, guid: 7db3536f57406784dbb5b536941ccf0e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -234.8
+      value: 14.3
       objectReference: {fileID: 0}
     - target: {fileID: 3401290334351637864, guid: 7db3536f57406784dbb5b536941ccf0e,
         type: 3}

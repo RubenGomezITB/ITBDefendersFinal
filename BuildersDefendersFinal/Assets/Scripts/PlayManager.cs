@@ -10,10 +10,10 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
 {
     public const int Timer = 60;
     public float timeRemain = 60;
-    public bool roundStarted = false, decayBool = false;
+    public bool roundStarted = false, decayBool = false, load = false;
     public Text Text;
     public UnitLife nexusMaster, nexusClient;
-    
+
 
     private void Start()
     {
@@ -48,12 +48,17 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
         if (nexusMaster.life <= 0 && PhotonNetwork.IsMasterClient)
         {
             RoundCounter.instance.clientRoundsWin++;
-            PhotonNetwork.LoadLevel(2);
+            load = true;
         }
         else if (nexusClient.life <= 0 && PhotonNetwork.IsMasterClient)
         {
             RoundCounter.instance.hostRoundsWin++;
-            PhotonNetwork.LoadLevel(2);
+            load = true;
+        }
+
+        if (load)
+        {
+            PhotonNetwork.LoadLevel(1);
         }
     }
 
@@ -70,6 +75,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
     private void startRound()
     {
         roundStarted = true;
+        timeRemain = 60;
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

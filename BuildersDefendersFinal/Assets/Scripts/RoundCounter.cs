@@ -58,7 +58,6 @@ public class RoundCounter : MonoBehaviourPun
         yield return new WaitForSeconds(3);
         Destroy(gameObject);
         PhotonNetwork.LeaveRoom();
-        Destroy(gameObject);
     }
 
     private IEnumerator Win()
@@ -67,6 +66,5 @@ public class RoundCounter : MonoBehaviourPun
         yield return new WaitForSeconds(3);
         Destroy(gameObject);
         PhotonNetwork.LeaveRoom();
-        Destroy(gameObject);
     }
 }

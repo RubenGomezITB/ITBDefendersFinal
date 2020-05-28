@@ -48,11 +48,6 @@ public class GameManager : MonoBehaviourPunCallbacks
             isLoading = false;
         }
 
-        if (scene.buildIndex == 2)
-        {
-            PhotonNetwork.LoadLevel(1);
-        }
-        
     }
     
     void OnDisable()
