@@ -13,6 +13,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
     public bool roundStarted = false, decayBool = false;
     public Text Text;
     public UnitLife nexusMaster, nexusClient;
+    
 
     private void Start()
     {
@@ -47,12 +48,12 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
         if (nexusMaster.life <= 0 && PhotonNetwork.IsMasterClient)
         {
             RoundCounter.instance.clientRoundsWin++;
-            PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+            PhotonNetwork.LoadLevel(2);
         }
         else if (nexusClient.life <= 0 && PhotonNetwork.IsMasterClient)
         {
             RoundCounter.instance.hostRoundsWin++;
-            PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+            PhotonNetwork.LoadLevel(2);
         }
     }
 
