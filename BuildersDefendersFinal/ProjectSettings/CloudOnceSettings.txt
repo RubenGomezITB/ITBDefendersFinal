@@ -17,7 +17,15 @@
 		}
 	],
 	"LeaderboardIDs":[],
-	"CloudVariables":[],
+	"CloudVariables":[
+		{
+			"Key":"Level",
+			"Type":"0",
+			"DefaultValue":"0",
+			"PersistenceType":"0",
+			"AllowNegative":false
+		}
+	],
 	"AppleSupported":false,
 	"GoogleSupported":true,
 	"GoogleAppID":"1096833982008",

@@ -13,5 +13,12 @@ namespace CloudOnce
     /// </summary>
     public static class CloudVariables
     {
+        private static readonly CloudInt s_level = new CloudInt("Level", PersistenceType.Latest, 0);
+
+        public static int Level
+        {
+            get { return s_level.Value; }
+            set { s_level.Value = value; }
+        }
     }
 }

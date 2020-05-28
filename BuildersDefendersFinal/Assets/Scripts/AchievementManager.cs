@@ -31,6 +31,10 @@ public class AchievementManager : MonoBehaviour
     public void OnGameWin()
     {
         winGames += 1;
+        CloudVariables.Level +=1;
+        Debug.Log(CloudVariables.Level);
+        Cloud.Storage.Save();
+        
         if (winGames == 1)
         {
             Achievements.Begginer.Unlock();
