@@ -9,12 +9,10 @@ using UnityEngine.UI;
 public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
 {
     public const int Timer = 60;
-    public float timeRemain;
-    public int numberOfRounds = 0;
+    public float timeRemain = 60;
     public bool roundStarted = false, decayBool = false;
     public Text Text;
     public UnitLife nexusMaster, nexusClient;
-    public RoundCounter RoundCounter;
 
     private void Start()
     {
@@ -34,6 +32,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
 
             if (timeRemain <= 0.0f)
             {
+                timeRemain = 0;
                 timerEnded();
                 roundStarted = false;
             }
@@ -47,13 +46,13 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
 
         if (nexusMaster.life <= 0 && PhotonNetwork.IsMasterClient)
         {
-            RoundCounter.clientRoundsWin++;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            RoundCounter.instance.clientRoundsWin++;
+            PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex);
         }
         else if (nexusClient.life <= 0 && PhotonNetwork.IsMasterClient)
         {
-            RoundCounter.hostRoundsWin++;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            RoundCounter.instance.hostRoundsWin++;
+            PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -69,8 +68,6 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
 
     private void startRound()
     {
-        numberOfRounds = 1;
-        timeRemain = 60;
         roundStarted = true;
     }
 
