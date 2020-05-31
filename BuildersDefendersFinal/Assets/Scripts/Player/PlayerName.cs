@@ -8,7 +8,9 @@ using UnityEngine.UI;
 public class PlayerName : MonoBehaviour
 {
     const string playerNamePrefKey = "PlayerName";
-    public GameObject Players, button, logs, launcher;
+    public GameObject Players, button, logs, launcher, achievementManager;
+
+    AchievementManager achievement;
 
     void Start () {
         if (PlayerPrefs.GetString(playerNamePrefKey, "") == "")
@@ -50,7 +52,7 @@ public class PlayerName : MonoBehaviour
         logs.SetActive(true);
         launcher.SetActive(true); 
 
-        
+        //AchievementManager.OnSetAName();
 
         PlayerPrefs.SetString(playerNamePrefKey,value);
     }

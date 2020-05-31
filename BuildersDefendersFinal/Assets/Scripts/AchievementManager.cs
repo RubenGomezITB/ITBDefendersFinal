@@ -45,5 +45,14 @@ public class AchievementManager : MonoBehaviour
             Achievements.Amateur.Unlock();
             Debug.Log("Amat");
         }
+        else if (winGames == 10)
+        {
+            Achievements.Expert.Unlock();
+            Debug.Log("Amat");
+        }
+    }
+
+    public void OnSetAName(){
+        Achievements.Name.Unlock();
     }
 }

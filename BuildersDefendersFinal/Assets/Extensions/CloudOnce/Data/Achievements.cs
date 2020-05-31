@@ -48,7 +48,7 @@ namespace CloudOnce
 #if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
             ""
 #elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
-            ""
+            "CgkIuLyZg_YfEAIQAw"
 #else
             "Expert"
 #endif
@@ -59,11 +59,27 @@ namespace CloudOnce
             get { return s_expert; }
         }
 
+        private static readonly UnifiedAchievement s_name = new UnifiedAchievement("Name",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkIuLyZg_YfEAIQBg"
+#else
+            "Name"
+#endif
+            );
+
+        public static UnifiedAchievement Name
+        {
+            get { return s_name; }
+        }
+
         public static readonly UnifiedAchievement[] All =
         {
             s_begginer,
             s_amateur,
             s_expert,
+            s_name,
         };
 
         public static string GetPlatformID(string internalId)
@@ -78,6 +94,7 @@ namespace CloudOnce
             { "Begginer", s_begginer },
             { "Amateur", s_amateur },
             { "Expert", s_expert },
+            { "Name", s_name },
         };
     }
 }

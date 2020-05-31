@@ -66,7 +66,7 @@ namespace CloudOnce
                 {
 #if UNITY_ANDROID && !UNITY_EDITOR
 #if CLOUDONCE_GOOGLE
-                    return "";
+                    return "CgkIuLyZg_YfEAIQAw";
 #else
                     return string.Empty;
 #endif
@@ -74,6 +74,26 @@ namespace CloudOnce
                     return "";
 #elif UNITY_EDITOR
                     return "Expert";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string Name
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkIuLyZg_YfEAIQBg";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "Name";
 #else
                     return string.Empty;
 #endif
