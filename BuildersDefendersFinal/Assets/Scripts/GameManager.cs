@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     
     void OnDisable()
     {
-        Debug.Log("OnDisable");
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
@@ -93,6 +92,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.LeaveRoom();
             playing = false;
+            SceneManager.LoadScene(0);
         }
 
         if (PhotonNetwork.IsMasterClient && currentScene.name == "startScene" && PhotonNetwork.CurrentRoom.PlayerCount == 2)

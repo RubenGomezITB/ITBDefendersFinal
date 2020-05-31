@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -18,9 +16,10 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
     private float distance = 10000;
     public LayerMask layer;
     public Camera camaraHost, camaraClient, camara;
-    private RaycastHitter.spawnZones SpawnZone;
+    public RaycastHitter.spawnZones SpawnZone;
     public bool ataque;
     RaycastHit hit;
+    public GameObject raycastHitter, host, client;
 
     private void Start()
     {
@@ -30,6 +29,7 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
         if (PhotonNetwork.IsMasterClient)
         {
             camara = camaraHost;
+            raycastHitter = host;
             if (ataque)
             {
                 SpawnZone = RaycastHitter.spawnZones.hostAttack;
@@ -41,6 +41,7 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
         }
         else
         {
+            raycastHitter = client;
             camara = camaraClient;
             if (ataque)
             {
@@ -57,8 +58,9 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
     {
         if (objectToInstantiate != null)
         {
-            Ray ray = camara.ScreenPointToRay(Input.GetTouch(0).position);
+           Ray ray = camara.ScreenPointToRay(Input.mousePosition);
 
+            
             if (Physics.Raycast(ray, out hit, distance, layer))
             {
                 Vector3 position = hit.point;
@@ -66,6 +68,7 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
                 objectToInstantiate.transform.position = new Vector3(position.x, 0.5633333f, position.z);
             }
         }
+        Debug.Log(PhotonNetwork.IsMasterClient);
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -74,19 +77,19 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        raycastHitter.SetActive(true);
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         canMove = true;
         if (hit.transform.gameObject.GetComponent<RaycastHitter>().SpawnZone == SpawnZone)
-        {
+        { 
             PhotonNetwork.Instantiate(enemy.name, objectToInstantiate.transform.position, Quaternion.identity);
         }
-
-        //Instantiate(enemy, objectToInstantiate.transform.position, Quaternion.identity);
         Destroy(objectToInstantiate.gameObject);
         objectToInstantiate = null;
+        raycastHitter.SetActive(false);
     }
 
     public void OnDrag(PointerEventData eventData)
