@@ -84,20 +84,4 @@ public class GameManager : MonoBehaviourPunCallbacks
         playing = false;
     }
     
-    // Update is called once per frame
-    void Update()
-    {
-        //Comprovar si hay jugadores en la sala. Al ser android, al cerrar el juego no desconecta de inmediato, asi que da error si no se hace así
-        if (playing && PhotonNetwork.CurrentRoom.PlayerCount < 2)
-        {
-            PhotonNetwork.LeaveRoom();
-            playing = false;
-            SceneManager.LoadScene(0);
-        }
-
-        if (PhotonNetwork.IsMasterClient && currentScene.name == "startScene" && PhotonNetwork.CurrentRoom.PlayerCount == 2)
-        {
-            LoadLevel();
-        }
-    }
 }

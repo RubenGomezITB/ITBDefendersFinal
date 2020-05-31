@@ -11,7 +11,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
     public const int Timer = 60;
     public float timeRemain = 60;
     public bool roundStarted = false, decayBool = false, load = false;
-    public Text Text;
+    public Text Text, winLose;
     public UnitLife nexusMaster, nexusClient;
 
 
@@ -45,21 +45,50 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
             nexusMaster.life--;
         }
 
-        if (nexusMaster.life <= 0 && PhotonNetwork.IsMasterClient)
+        if (nexusMaster.life <= 0)
         {
-            RoundCounter.instance.clientRoundsWin++;
-            load = true;
+            clientWin();
         }
-        else if (nexusClient.life <= 0 && PhotonNetwork.IsMasterClient)
+        else if (nexusClient.life <= 0)
         {
-            RoundCounter.instance.hostRoundsWin++;
-            load = true;
+            hostWin();
         }
+    }
 
-        if (load)
+    private void clientWin()
+    {
+        if (PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.LoadLevel(1);
+            PhotonNetwork.DestroyAll();
+            StartCoroutine(youLose());
         }
+        else StartCoroutine(youWin());
+    }
+    private void hostWin()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.DestroyAll();
+            StartCoroutine(youWin());
+        }
+        else  StartCoroutine(youLose());
+    }
+    private IEnumerator youLose()
+    {
+        winLose.text = "Perdiste";
+        winLose.enabled = true;
+        yield return new WaitForSeconds(3);
+        PhotonNetwork.LeaveRoom();
+        SceneManager.LoadScene(0);
+    }
+
+    private IEnumerator youWin()
+    {
+        winLose.text = "Ganaste";
+        winLose.enabled = true;
+        yield return new WaitForSeconds(3);
+        PhotonNetwork.LeaveRoom();
+        SceneManager.LoadScene(0);
     }
 
     private void timerEnded()
