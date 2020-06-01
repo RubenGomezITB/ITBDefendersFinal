@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class MainScreenButtonManager : MonoBehaviour
 {
+    public GameObject cardScreen;
     public GameObject friendsScreen;
     public GameObject creditsScreen;
     public GameObject changeLogScreen;
@@ -19,11 +20,15 @@ public class MainScreenButtonManager : MonoBehaviour
     public List<Button> SettingsBtns = new List<Button>();
     public List<Button> Cards = new List<Button>();
     private List<bool> UpgradePanelBools = new List<bool> { false, false, false, false };
+    [SerializeField] public bool cardScreenIsActive;
+    private DisplayCardAttributesScript cardScreenScript;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        cardScreenScript = cardScreen.transform.GetChild(0).GetComponent<DisplayCardAttributesScript>();
         friendsScreenIsActive = false;
         soundIsActive = true;
         musicIsActive = true;
@@ -37,7 +42,7 @@ public class MainScreenButtonManager : MonoBehaviour
         
     }
 
-    public void setFriendsScreen() {
+    public void SetFriendsScreen() {
         if (friendsScreenIsActive)
         {
             this.friendsScreen.SetActive(false);
@@ -49,7 +54,7 @@ public class MainScreenButtonManager : MonoBehaviour
         friendsScreenIsActive = !friendsScreenIsActive;
     }
 
-    public void displayPurchasePanel()
+    public void DisplayPurchasePanel()
     {
         for (var i=0;i<ScreensList.Count;i++) {
             ScreensList[i].SetActive(false);
@@ -57,7 +62,7 @@ public class MainScreenButtonManager : MonoBehaviour
         ScreensList[0].SetActive(true);
     }
 
-    public void displayDeckPanel()
+    public void DisplayDeckPanel()
     {
         for (var i = 0; i < ScreensList.Count; i++)
         {
@@ -66,7 +71,7 @@ public class MainScreenButtonManager : MonoBehaviour
         ScreensList[1].SetActive(true);
     }
 
-    public void displayHomePanel()
+    public void DisplayHomePanel()
     {
         for (var i = 0; i < ScreensList.Count; i++)
         {
@@ -75,7 +80,7 @@ public class MainScreenButtonManager : MonoBehaviour
         ScreensList[2].SetActive(true);
     }
 
-    public void displayAchievementsPanel()
+    public void DisplayAchievementsPanel()
     {
         for (var i = 0; i < ScreensList.Count; i++)
         {
@@ -84,7 +89,7 @@ public class MainScreenButtonManager : MonoBehaviour
         ScreensList[3].SetActive(true);
     }
 
-    public void displaySettingsPanel()
+    public void DisplaySettingsPanel()
     {
         for (var i = 0; i < ScreensList.Count; i++)
         {
@@ -93,7 +98,7 @@ public class MainScreenButtonManager : MonoBehaviour
         ScreensList[4].SetActive(true);
     }
 
-    private void activateSound() {
+    private void ActivateSound() {
         ColorBlock colors = SettingsBtns[0].colors;
         colors.normalColor = Color.green;
         colors.highlightedColor = new Color32(0, 255, 0, 255);
@@ -101,7 +106,7 @@ public class MainScreenButtonManager : MonoBehaviour
         SettingsBtns[0].image.color= new Color32(0, 255, 0, 255);
     }
 
-    private void stopSound()
+    private void StopSound()
     {
         ColorBlock colors = SettingsBtns[0].colors;
         colors.normalColor = Color.red;
@@ -110,7 +115,7 @@ public class MainScreenButtonManager : MonoBehaviour
         SettingsBtns[0].image.color = new Color32(255, 0, 0, 255);
     }
 
-    private void activateMusic()
+    private void ActivateMusic()
     {
         ColorBlock colors = SettingsBtns[1].colors;
         colors.normalColor = Color.green;
@@ -119,7 +124,7 @@ public class MainScreenButtonManager : MonoBehaviour
         SettingsBtns[1].image.color = new Color32(0, 255, 0, 255);
     }
 
-    private void stopMusic()
+    private void StopMusic()
     {
         ColorBlock colors = SettingsBtns[1].colors;
         colors.normalColor = Color.red;
@@ -128,32 +133,32 @@ public class MainScreenButtonManager : MonoBehaviour
         SettingsBtns[1].image.color = new Color32(255,0, 0, 255);
     }
 
-    public void setSound() {
+    public void SetSound() {
         if (soundIsActive)
         {
-            stopSound();
+            StopSound();
         }
         else
         {
-            activateSound();
+            ActivateSound();
         }
         soundIsActive = !soundIsActive;
     }
 
-    public void setMusic()
+    public void SetMusic()
     {
         if (musicIsActive)
         {
-            stopMusic();
+            StopMusic();
         }
         else
         {
-            activateMusic();
+            ActivateMusic();
         }
         musicIsActive = !musicIsActive;
     }
     
-    public void displayCreditsPanel() {
+    public void DisplayCreditsPanel() {
         if (crGoBackBtnIsActive)
         {
             creditsScreen.SetActive(false);
@@ -164,7 +169,7 @@ public class MainScreenButtonManager : MonoBehaviour
         }
         crGoBackBtnIsActive = !crGoBackBtnIsActive;
     }
-    public void displayChangeLogPanel()
+    public void DisplayChangeLogPanel()
     {
         if (chGoBackBtnIsActive)
         {
@@ -177,7 +182,7 @@ public class MainScreenButtonManager : MonoBehaviour
         chGoBackBtnIsActive = !chGoBackBtnIsActive;
     }
 
-    public void displayUpgradePanel1()
+    public void DisplayUpgradePanel1()
     {
 
         if (UpgradePanelBools[0])
@@ -191,7 +196,7 @@ public class MainScreenButtonManager : MonoBehaviour
         UpgradePanelBools[0] = !UpgradePanelBools[0];
     }
 
-    public void displayUpgradePanel2()
+    public void DisplayUpgradePanel2()
     {
 
         if (UpgradePanelBools[1])
@@ -206,7 +211,7 @@ public class MainScreenButtonManager : MonoBehaviour
     }
 
 
-    public void displayUpgradePanel3()
+    public void DisplayUpgradePanel3()
     {
 
         if (UpgradePanelBools[2])
@@ -221,7 +226,7 @@ public class MainScreenButtonManager : MonoBehaviour
     }
 
 
-    public void displayUpgradePanel4()
+    public void DisplayUpgradePanel4()
     {
 
         if (UpgradePanelBools[3])
@@ -235,8 +240,22 @@ public class MainScreenButtonManager : MonoBehaviour
         UpgradePanelBools[3] = !UpgradePanelBools[3];
     }
 
-    public void playGame() {
+    public void PlayGame() {
         SceneManager.LoadScene("PlayScene", LoadSceneMode.Single);
+    }
+
+    public void DisplayCardScreen()
+    {
+
+        if (cardScreenIsActive)
+        {
+            cardScreen.SetActive(false);
+        }
+        else
+        {
+            cardScreen.SetActive(true);
+        }
+        cardScreenIsActive = !cardScreenIsActive;
     }
 
 }

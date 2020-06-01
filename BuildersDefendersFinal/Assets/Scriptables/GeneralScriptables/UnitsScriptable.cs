@@ -17,6 +17,7 @@ public class UnitsScriptable : ScriptableObject
     public int lvl;
     public Sprite cardArt;
     public UnitsScriptable nextLvlCard;
+    public int upgradeGoldCost;
 
     public String GetUnitNamePerLenguage(UnitsTranslation.Languages lenguages)
     {

@@ -21,3 +21,5 @@ MonoBehaviour:
   movSpeed: 8
   lvl: 0
   cardArt: {fileID: 21300000, guid: eafbb0a826f79bc488edfdc340ff8c19, type: 3}
+  nextLvlCard: {fileID: 0}
+  upgradeGoldCost: 2500
