@@ -1,4 +1,5 @@
-﻿using Photon.Pun;
+﻿using System;
+using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,17 +10,18 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject camaraClient, camaraHosted;
     public bool playing = false;
     private Scene currentScene;
+
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-      
         }
         else
         {
             Destroy(this);
         }
+
         DontDestroyOnLoad(this);
     }
 
@@ -47,25 +49,25 @@ public class GameManager : MonoBehaviourPunCallbacks
             playing = true;
             isLoading = false;
         }
-
     }
-    
+
     void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private bool isLoading = false;
+
     public void LoadLevel()
     {
-        if (PhotonNetwork.CurrentRoom.PlayerCount == 2 && PhotonNetwork.IsMasterClient && isLoading == false && currentScene.name == "startScene")
+        if (isLoading == false && currentScene.name == "startScene")
         {
-            isLoading = true; 
+            isLoading = true;
             PhotonNetwork.LoadLevel(1);
         }
     }
-    
-    void OnApplicationQuit() 
+
+    void OnApplicationQuit()
     {
         PhotonNetwork.Disconnect();
     }
@@ -75,13 +77,16 @@ public class GameManager : MonoBehaviourPunCallbacks
         base.OnLeftRoom();
         SceneManager.LoadScene(0);
     }
-
-
-    public override void OnPlayerLeftRoom(Player other)
-    {
-        PhotonNetwork.LeaveRoom();
-        SceneManager.LoadScene(0);
-        playing = false;
-    }
     
+
+    private void Update()
+    {
+        if (playing == false)
+        {
+            if (PhotonNetwork.CurrentRoom.PlayerCount == 2 & PhotonNetwork.IsMasterClient)
+            {
+                LoadLevel();
+            }
+        }
+    }
 }

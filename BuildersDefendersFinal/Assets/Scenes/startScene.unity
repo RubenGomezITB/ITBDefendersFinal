@@ -15570,6 +15570,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1503726581867926753, guid: b59b4210ae6836a41aba95bab7c1257e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2315623576008412262, guid: b59b4210ae6836a41aba95bab7c1257e,
         type: 3}
       propertyPath: camaraHosted

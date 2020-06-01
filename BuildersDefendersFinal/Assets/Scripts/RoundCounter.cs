@@ -56,7 +56,7 @@ public class RoundCounter : MonoBehaviourPun
         youLose.text = "Perdiste";
         youLose.enabled = true;
         yield return new WaitForSeconds(3);
-        Destroy(gameObject);
+        GameManager.instance.playing = false;
         PhotonNetwork.LeaveRoom();
     }
 
@@ -64,7 +64,7 @@ public class RoundCounter : MonoBehaviourPun
     {
         youWin.enabled = true;
         yield return new WaitForSeconds(3);
-        Destroy(gameObject);
+        GameManager.instance.playing = false;
         PhotonNetwork.LeaveRoom();
     }
 }

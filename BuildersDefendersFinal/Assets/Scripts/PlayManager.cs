@@ -8,55 +8,71 @@ using UnityEngine.UI;
 
 public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
 {
-    public const int Timer = 60;
+    public const int Timer = 180;
     public float timeRemain = 60;
     public bool roundStarted = false, decayBool = false, load = false;
     public Text Text, winLose;
     public UnitLife nexusMaster, nexusClient;
+    private bool ended = false, canStart = false;
+    public Canvas Canvas;
 
 
     private void Start()
     {
-        if (PhotonNetwork.IsMasterClient)
-        {
-            startRound();
-        }
+        StartCoroutine(AnimacionStartRound());
     }
+
+    private IEnumerator AnimacionStartRound()
+    {
+        Debug.Log("CoroutineExample started at " + Time.time.ToString() + "s");  
+        yield return new WaitForSeconds(3f);
+        Canvas.gameObject.SetActive(true);
+        canStart = true;
+        roundStarted = true;
+        timeRemain = 180;
+        Debug.Log("CoroutineExample ended at " + Time.time.ToString() + "s");  
+    }
+    
 
     private void Update()
     {
-        Text.text = Mathf.Floor(timeRemain).ToString();
-        if (roundStarted && PhotonNetwork.IsMasterClient)
+        if (ended == false && canStart)
         {
-            timeRemain -= Time.deltaTime;
-
-
-            if (timeRemain <= 0.0f)
+            Text.text = Mathf.Floor(timeRemain).ToString();
+            if (roundStarted && PhotonNetwork.IsMasterClient)
             {
-                timeRemain = 0;
-                timerEnded();
-                roundStarted = false;
+                timeRemain -= Time.deltaTime;
+
+
+                if (timeRemain <= 0.0f)
+                {
+                    timeRemain = 0;
+                    timerEnded();
+                    roundStarted = false;
+                }
+            }
+
+            if (decayBool && PhotonNetwork.IsMasterClient)
+            {
+                nexusClient.life--;
+                nexusMaster.life--;
+            }
+
+            if (nexusMaster.life <= 0)
+            {
+                clientWin();
+            }
+            else if (nexusClient.life <= 0)
+            {
+                hostWin();
             }
         }
-
-        if (decayBool && PhotonNetwork.IsMasterClient)
-        {
-            nexusClient.life--;
-            nexusMaster.life--;
-        }
-
-        if (nexusMaster.life <= 0)
-        {
-            clientWin();
-        }
-        else if (nexusClient.life <= 0)
-        {
-            hostWin();
-        }
+        
     }
 
     private void clientWin()
     {
+        ended = true;
         if (PhotonNetwork.IsMasterClient)
         {
             PhotonNetwork.DestroyAll();
@@ -66,6 +82,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
     }
     private void hostWin()
     {
+        ended = true;
         if (PhotonNetwork.IsMasterClient)
         {
             PhotonNetwork.DestroyAll();
@@ -76,7 +93,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
     private IEnumerator youLose()
     {
         winLose.text = "Perdiste";
-        winLose.enabled = true;
+        winLose.gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene(0);
@@ -85,7 +102,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
     private IEnumerator youWin()
     {
         winLose.text = "Ganaste";
-        winLose.enabled = true;
+        winLose.gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene(0);
@@ -93,19 +110,9 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
 
     private void timerEnded()
     {
-        Decay();
-    }
-
-    private void Decay()
-    {
         decayBool = true;
     }
-
-    private void startRound()
-    {
-        roundStarted = true;
-        timeRemain = 60;
-    }
+    
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {

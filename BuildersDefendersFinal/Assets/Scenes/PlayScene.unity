@@ -520,6 +520,7 @@ MonoBehaviour:
   winLose: {fileID: 666655956}
   nexusMaster: {fileID: 422847420}
   nexusClient: {fileID: 618314763}
+  Canvas: {fileID: 980627805}
 --- !u!4 &595026229
 Transform:
   m_ObjectHideFlags: 0
@@ -1013,7 +1014,7 @@ PrefabInstance:
     - target: {fileID: 3401290334036027930, guid: 7db3536f57406784dbb5b536941ccf0e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3401290334036028006, guid: 7db3536f57406784dbb5b536941ccf0e,
         type: 3}
