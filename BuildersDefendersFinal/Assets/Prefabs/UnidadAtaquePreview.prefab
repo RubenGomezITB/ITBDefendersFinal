@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1881812900273966061}
   - component: {fileID: 1881812900273966060}
   - component: {fileID: 1881812900273966063}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: UnidadAtaquePreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}

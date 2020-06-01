@@ -17,6 +17,7 @@ public class MainScreenButtonManager : MonoBehaviour
     [SerializeField] private bool crGoBackBtnIsActive;
     public List<GameObject> ScreensList = new List<GameObject>();
     public List<Button> SettingsBtns = new List<Button>();
+    public Launcher launcher;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +28,7 @@ public class MainScreenButtonManager : MonoBehaviour
         crGoBackBtnIsActive = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 
     public void setFriendsScreen() {
         if (friendsScreenIsActive)
@@ -174,7 +171,7 @@ public class MainScreenButtonManager : MonoBehaviour
     }
 
     public void playGame() {
-        SceneManager.LoadScene("PlayScene", LoadSceneMode.Single);
+        launcher.ConnectToGame();
     }
 
 }

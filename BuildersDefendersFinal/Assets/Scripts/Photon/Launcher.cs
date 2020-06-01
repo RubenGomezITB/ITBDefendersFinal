@@ -11,11 +11,9 @@ public class Launcher : MonoBehaviourPunCallbacks
 {
     private string gameVersion = "1";
     private byte maxPlayers = 2;
-    public Text Text;
     private bool connected = false;
-    public Text peopleConnected;
     private bool isLoading = false;
-    public Button start;
+    public Text playerName, debugText;
 
 
     private void Awake()
@@ -28,14 +26,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         Connect();
     }
 
-    private void Update()
-    {
-        if (connected)
-        {
-            peopleConnected.text = PhotonNetwork.CurrentRoom.PlayerCount+ "/"+  maxPlayers;
-        }
-        
-    }
+  
 
     public void Connect()
     {
@@ -45,15 +36,21 @@ public class Launcher : MonoBehaviourPunCallbacks
         else
         {
             //Conexión con el servidor maestro de pun
-            PhotonNetwork.ConnectUsingSettings();
             PhotonNetwork.GameVersion = gameVersion;
+            
+            PhotonNetwork.PhotonServerSettings.AppSettings.AppIdRealtime = "258c8da4-1e99-49c0-9872-a0bfda278826";
+            PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = "eu";
+            PhotonNetwork.ConnectUsingSettings();
+            debugText.text += "\n Conectando a master";
         }
     }
 
     public override void OnConnectedToMaster()
     {
         Debug.Log("conectado a master bro");
-        Text.text += ("\nConectado a master. Bienvenido "+ PlayerPrefs.GetString("PlayerName", ""));
+        debugText.text += "\n Conectado a master";
+        debugText.text += "\n " + PhotonNetwork.CloudRegion;
+        playerName.text = PlayerPrefs.GetString("PlayerName", "");
     }
 
     public override void OnDisconnected(DisconnectCause cause)
@@ -64,25 +61,26 @@ public class Launcher : MonoBehaviourPunCallbacks
     public void ConnectToGame()
     {
         PhotonNetwork.JoinRandomRoom();
+        debugText.text += "\n Entrando en sala";
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
         Debug.Log("No hay salas disponibles");
-        Text.text += ("\nNo hay salas disponibles, creando una.");
+        debugText.text += "\n no hay salas";
         PhotonNetwork.CreateRoom(null, new RoomOptions{MaxPlayers = maxPlayers});
     }
 
     public override void OnJoinedRoom()
     {
         Debug.Log("Entrando en sala bro");
-        Text.text += ("\nConectado a la sala, esperando a otro jugador...");
         connected = true;
-        if (PhotonNetwork.IsMasterClient)
-        {
-            start.interactable = true;
-        }
+  
     }
-    
-    
+
+    public override void OnCreatedRoom()
+    {
+        base.OnCreatedRoom();
+        debugText.text += "\n sala creada";
+    }
 }

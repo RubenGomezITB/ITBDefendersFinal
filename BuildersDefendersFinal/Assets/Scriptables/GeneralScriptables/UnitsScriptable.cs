@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu (menuName = "Scriptables/Units")]
 public class UnitsScriptable : ScriptableObject
@@ -15,6 +16,7 @@ public class UnitsScriptable : ScriptableObject
     public float attSpeed;
     public float movSpeed;
     public int lvl;
+    public Image image;
 
     public String GetUnitNamePerLenguage(UnitsTranslation.Languages lenguages)
     {

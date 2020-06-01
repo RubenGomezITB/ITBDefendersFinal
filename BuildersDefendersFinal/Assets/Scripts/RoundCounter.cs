@@ -9,9 +9,19 @@ public class RoundCounter : MonoBehaviourPun
 {
     public int hostRoundsWin = 0, clientRoundsWin = 0;
     public Text youWin, youLose;
+    public static RoundCounter instance;
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+
         DontDestroyOnLoad(this);
     }
 
@@ -31,8 +41,8 @@ public class RoundCounter : MonoBehaviourPun
         else if (PhotonNetwork.IsMasterClient == false)
         {
             if (hostRoundsWin == 2)
-            {StartCoroutine(Lose());
-                
+            {
+                StartCoroutine(Lose());
             }
             else if (clientRoundsWin == 2)
             {
@@ -43,19 +53,18 @@ public class RoundCounter : MonoBehaviourPun
 
     private IEnumerator Lose()
     {
+        youLose.text = "Perdiste";
         youLose.enabled = true;
         yield return new WaitForSeconds(3);
+        GameManager.instance.playing = false;
         PhotonNetwork.LeaveRoom();
-        Destroy(gameObject);
     }
 
     private IEnumerator Win()
     {
         youWin.enabled = true;
         yield return new WaitForSeconds(3);
+        GameManager.instance.playing = false;
         PhotonNetwork.LeaveRoom();
-        Destroy(gameObject);
     }
-
-   
 }
