@@ -667,8 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fc2d2d8f590d243b13211b32fe842f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: {fileID: 0}
-  debugText: {fileID: 0}
+  playerName: {fileID: 822820927}
 --- !u!4 &149024916
 Transform:
   m_ObjectHideFlags: 0
@@ -1143,7 +1142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &282883428
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3748,7 +3747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161dbabaf1fa0b94e969f278a389602f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 0}
+  card: {fileID: 11400000, guid: d13dcf2a1af74984493c42a1a8a04892, type: 2}
   cardImage: {fileID: 0}
   level: {fileID: 0}
   cost: {fileID: 1230665353}
@@ -7274,7 +7273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1177335136
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11958,7 +11957,6 @@ GameObject:
   - component: {fileID: 1834754457}
   - component: {fileID: 1834754456}
   - component: {fileID: 1834754455}
-  - component: {fileID: 1834754454}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -11966,32 +11964,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1834754454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834754453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1029682b8a75fa34e959fce2864fc436, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardScreen: {fileID: 0}
-  friendsScreen: {fileID: 0}
-  creditsScreen: {fileID: 0}
-  changeLogScreen: {fileID: 0}
-  friendsScreenIsActive: 0
-  soundIsActive: 0
-  musicIsActive: 0
-  chGoBackBtnIsActive: 0
-  crGoBackBtnIsActive: 0
-  ScreensList: []
-  SettingsBtns: []
-  launcher: {fileID: 0}
-  Cards: []
-  cardScreenIsActive: 0
 --- !u!114 &1834754455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12462,7 +12434,7 @@ MonoBehaviour:
   - {fileID: 1231533620}
   - {fileID: 1870824493}
   - {fileID: 347410318}
-  launcher: {fileID: 0}
+  launcher: {fileID: 149024915}
   Cards:
   - {fileID: 585396164}
   - {fileID: 1718726680}
