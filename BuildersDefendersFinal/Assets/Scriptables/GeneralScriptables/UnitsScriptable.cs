@@ -3,12 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
-using UnityEngine.UI;
 
 [CreateAssetMenu (menuName = "Scriptables/Units")]
 public class UnitsScriptable : ScriptableObject
 {
-    public UnitsTranslation.Unit Name;
+    public string Name;
     public int Life;
     public float Damage;
     public float Range;
@@ -16,10 +15,8 @@ public class UnitsScriptable : ScriptableObject
     public float attSpeed;
     public float movSpeed;
     public int lvl;
-    public Image image;
-
-    public String GetUnitNamePerLenguage(UnitsTranslation.Languages lenguages)
-    {
-        return UnitsTranslation.getUnitNamePerLenguage(Name, lenguages);
-    }
+    public Sprite cardArt;
+    public UnitsScriptable nextLvlCard;
+    public int upgradeGoldCost;
+    
 }

@@ -385,6 +385,7 @@
           </e>
           <e p="startScreen" t="Include">
             <e p="ChangeStartScreenPanel.cs" t="Include" />
+            <e p="DisplayCardAttributesScript.cs" t="Include" />
             <e p="friendsList.cs" t="Include" />
             <e p="inGameButtonManager.cs" t="Include" />
             <e p="introVideoPlayerScript.cs" t="Include" />

@@ -34,7 +34,7 @@ public class DisplayCardAttributesScript : MonoBehaviour
     void Update()
     {
         //ESTO ES SOLO PARA EL DECK SCREEN
-        if (SceneManager.GetActiveScene().name == "startScreenKleyton") {
+        if (SceneManager.GetActiveScene().name == "StartSceneMaster") {
            UpdateCard();
         }
     }

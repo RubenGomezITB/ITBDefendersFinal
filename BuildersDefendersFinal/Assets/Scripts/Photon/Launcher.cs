@@ -13,7 +13,9 @@ public class Launcher : MonoBehaviourPunCallbacks
     private byte maxPlayers = 2;
     private bool connected = false;
     private bool isLoading = false;
-    public Text playerName, debugText;
+
+    public Text playerName;
+    //public Text playerName, debugText;
 
 
     private void Awake()
@@ -41,15 +43,15 @@ public class Launcher : MonoBehaviourPunCallbacks
             PhotonNetwork.PhotonServerSettings.AppSettings.AppIdRealtime = "258c8da4-1e99-49c0-9872-a0bfda278826";
             PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = "eu";
             PhotonNetwork.ConnectUsingSettings();
-            debugText.text += "\n Conectando a master";
+            //debugText.text += "\n Conectando a master";
         }
     }
 
     public override void OnConnectedToMaster()
     {
         Debug.Log("conectado a master bro");
-        debugText.text += "\n Conectado a master";
-        debugText.text += "\n " + PhotonNetwork.CloudRegion;
+        //debugText.text += "\n Conectado a master";
+        //debugText.text += "\n " + PhotonNetwork.CloudRegion;
         playerName.text = PlayerPrefs.GetString("PlayerName", "");
     }
 
@@ -61,13 +63,13 @@ public class Launcher : MonoBehaviourPunCallbacks
     public void ConnectToGame()
     {
         PhotonNetwork.JoinRandomRoom();
-        debugText.text += "\n Entrando en sala";
+        //debugText.text += "\n Entrando en sala";
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
         Debug.Log("No hay salas disponibles");
-        debugText.text += "\n no hay salas";
+        //debugText.text += "\n no hay salas";
         PhotonNetwork.CreateRoom(null, new RoomOptions{MaxPlayers = maxPlayers});
     }
 
@@ -81,6 +83,6 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnCreatedRoom()
     {
         base.OnCreatedRoom();
-        debugText.text += "\n sala creada";
+        //debugText.text += "\n sala creada";
     }
 }

@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         currentScene = scene;
-        if (scene.name == "PlayScene")
+        if (scene.name == "PlaySceneMaster")
         {
             if (PhotonNetwork.IsMasterClient)
             {
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public void LoadLevel()
     {
-        if (isLoading == false && currentScene.name == "startScene")
+        if (isLoading == false && currentScene.name == "StartSceneMaster")
         {
             isLoading = true;
             PhotonNetwork.LoadLevel(1);

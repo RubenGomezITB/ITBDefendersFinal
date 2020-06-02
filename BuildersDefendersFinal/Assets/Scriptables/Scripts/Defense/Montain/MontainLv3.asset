@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5346607cb4d4ee14299847769515ded7, type: 3}
   m_Name: MontainLv3
   m_EditorClassIdentifier: 
-  Name: 2
+  Name: Pyramid
   Life: 42
   Damage: 10
   Range: 4

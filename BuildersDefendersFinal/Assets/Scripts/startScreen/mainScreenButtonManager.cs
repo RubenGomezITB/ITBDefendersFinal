@@ -20,10 +20,9 @@ public class MainScreenButtonManager : MonoBehaviour
     public List<Button> SettingsBtns = new List<Button>();
     public Launcher launcher;
     public List<Button> Cards = new List<Button>();
-    private List<bool> UpgradePanelBools = new List<bool> { false, false, false, false };
+    private List<bool> UpgradePanelBools = new List<bool> {false, false, false, false};
     [SerializeField] public bool cardScreenIsActive;
     private DisplayCardAttributesScript cardScreenScript;
-
 
 
     // Start is called before the first frame update
@@ -37,9 +36,9 @@ public class MainScreenButtonManager : MonoBehaviour
         crGoBackBtnIsActive = false;
     }
 
-  
 
-    public void SetFriendsScreen() {
+    public void SetFriendsScreen()
+    {
         if (friendsScreenIsActive)
         {
             this.friendsScreen.SetActive(false);
@@ -48,14 +47,17 @@ public class MainScreenButtonManager : MonoBehaviour
         {
             this.friendsScreen.SetActive(true);
         }
+
         friendsScreenIsActive = !friendsScreenIsActive;
     }
 
     public void DisplayPurchasePanel()
     {
-        for (var i=0;i<ScreensList.Count;i++) {
+        for (var i = 0; i < ScreensList.Count; i++)
+        {
             ScreensList[i].SetActive(false);
         }
+
         ScreensList[0].SetActive(true);
     }
 
@@ -65,6 +67,7 @@ public class MainScreenButtonManager : MonoBehaviour
         {
             ScreensList[i].SetActive(false);
         }
+
         ScreensList[1].SetActive(true);
     }
 
@@ -74,6 +77,7 @@ public class MainScreenButtonManager : MonoBehaviour
         {
             ScreensList[i].SetActive(false);
         }
+
         ScreensList[2].SetActive(true);
     }
 
@@ -83,6 +87,7 @@ public class MainScreenButtonManager : MonoBehaviour
         {
             ScreensList[i].SetActive(false);
         }
+
         ScreensList[3].SetActive(true);
     }
 
@@ -92,15 +97,17 @@ public class MainScreenButtonManager : MonoBehaviour
         {
             ScreensList[i].SetActive(false);
         }
+
         ScreensList[4].SetActive(true);
     }
 
-    private void ActivateSound() {
+    private void ActivateSound()
+    {
         ColorBlock colors = SettingsBtns[0].colors;
         colors.normalColor = Color.green;
         colors.highlightedColor = new Color32(0, 255, 0, 255);
         SettingsBtns[0].colors = colors;
-        SettingsBtns[0].image.color= new Color32(0, 255, 0, 255);
+        SettingsBtns[0].image.color = new Color32(0, 255, 0, 255);
     }
 
     private void StopSound()
@@ -127,10 +134,11 @@ public class MainScreenButtonManager : MonoBehaviour
         colors.normalColor = Color.red;
         colors.highlightedColor = new Color32(255, 0, 0, 255);
         SettingsBtns[1].colors = colors;
-        SettingsBtns[1].image.color = new Color32(255,0, 0, 255);
+        SettingsBtns[1].image.color = new Color32(255, 0, 0, 255);
     }
 
-    public void SetSound() {
+    public void SetSound()
+    {
         if (soundIsActive)
         {
             StopSound();
@@ -139,6 +147,7 @@ public class MainScreenButtonManager : MonoBehaviour
         {
             ActivateSound();
         }
+
         soundIsActive = !soundIsActive;
     }
 
@@ -152,10 +161,12 @@ public class MainScreenButtonManager : MonoBehaviour
         {
             ActivateMusic();
         }
+
         musicIsActive = !musicIsActive;
     }
-    
-    public void DisplayCreditsPanel() {
+
+    public void DisplayCreditsPanel()
+    {
         if (crGoBackBtnIsActive)
         {
             creditsScreen.SetActive(false);
@@ -164,8 +175,10 @@ public class MainScreenButtonManager : MonoBehaviour
         {
             creditsScreen.SetActive(true);
         }
+
         crGoBackBtnIsActive = !crGoBackBtnIsActive;
     }
+
     public void DisplayChangeLogPanel()
     {
         if (chGoBackBtnIsActive)
@@ -176,12 +189,12 @@ public class MainScreenButtonManager : MonoBehaviour
         {
             changeLogScreen.SetActive(true);
         }
+
         chGoBackBtnIsActive = !chGoBackBtnIsActive;
     }
 
     public void DisplayUpgradePanel1()
     {
-
         if (UpgradePanelBools[0])
         {
             Cards[0].transform.GetChild(0).gameObject.SetActive(false);
@@ -190,12 +203,12 @@ public class MainScreenButtonManager : MonoBehaviour
         {
             Cards[0].transform.GetChild(0).gameObject.SetActive(true);
         }
+
         UpgradePanelBools[0] = !UpgradePanelBools[0];
     }
 
     public void DisplayUpgradePanel2()
     {
-
         if (UpgradePanelBools[1])
         {
             Cards[1].transform.GetChild(0).gameObject.SetActive(false);
@@ -204,13 +217,13 @@ public class MainScreenButtonManager : MonoBehaviour
         {
             Cards[1].transform.GetChild(0).gameObject.SetActive(true);
         }
+
         UpgradePanelBools[1] = !UpgradePanelBools[1];
     }
 
 
     public void DisplayUpgradePanel3()
     {
-
         if (UpgradePanelBools[2])
         {
             Cards[2].transform.GetChild(0).gameObject.SetActive(false);
@@ -219,13 +232,13 @@ public class MainScreenButtonManager : MonoBehaviour
         {
             Cards[2].transform.GetChild(0).gameObject.SetActive(true);
         }
+
         UpgradePanelBools[2] = !UpgradePanelBools[2];
     }
 
 
     public void DisplayUpgradePanel4()
     {
-
         if (UpgradePanelBools[3])
         {
             Cards[3].transform.GetChild(0).gameObject.SetActive(false);
@@ -234,18 +247,18 @@ public class MainScreenButtonManager : MonoBehaviour
         {
             Cards[3].transform.GetChild(0).gameObject.SetActive(true);
         }
+
         UpgradePanelBools[3] = !UpgradePanelBools[3];
     }
 
-    public void PlayGame() {
-        SceneManager.LoadScene("PlayScene", LoadSceneMode.Single);
-    public void playGame() {
+
+    public void playGame()
+    {
         launcher.ConnectToGame();
     }
 
     public void DisplayCardScreen()
     {
-
         if (cardScreenIsActive)
         {
             cardScreen.SetActive(false);
@@ -254,7 +267,7 @@ public class MainScreenButtonManager : MonoBehaviour
         {
             cardScreen.SetActive(true);
         }
+
         cardScreenIsActive = !cardScreenIsActive;
     }
-
 }
