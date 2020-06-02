@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788559993430877130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1451, y: 3.7365, z: -0.28293}
+  m_LocalPosition: {x: -6.42, y: 1.8, z: -23}
   m_LocalScale: {x: 0.71860605, y: 0.71860605, z: 0.71860605}
   m_Children:
   - {fileID: 7522984319413504019}
@@ -65,7 +65,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 3
+  Synchronization: 1
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: -5596772910365302720}

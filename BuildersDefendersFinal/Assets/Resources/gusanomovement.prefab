@@ -949,6 +949,7 @@ GameObject:
   - component: {fileID: 8175812840984562412}
   - component: {fileID: -2005275449357651257}
   - component: {fileID: 2533270389083258415}
+  - component: {fileID: 7173810529099904749}
   m_Layer: 0
   m_Name: gusanomovement
   m_TagString: Untagged
@@ -964,7 +965,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4509735741062896507}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.683796, y: 6.5144854, z: -17.492191}
+  m_LocalPosition: {x: -5, y: 0.2, z: 10.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3774192125304447718}
@@ -1014,9 +1015,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _us: {fileID: 11400000, guid: 633ed94cabf99994c9e75f436b8f9767, type: 2}
-  HostNexus: {fileID: 4779524392363531862, guid: a4b1c787bcfc3c2448dba24032d5d50f,
+  HostNexus: {fileID: 788559993430877130, guid: 36113a1de55bae5478d45175055d17d1,
     type: 3}
-  ClientNexus: {fileID: 6047323687532226831, guid: 88650d2d94c2d2149ac1a07151480fe5,
+  ClientNexus: {fileID: 7325278822849558463, guid: ff81d28bdcea2774eb1297756b071af7,
     type: 3}
   nexus: {fileID: 0}
   agent: {fileID: -2005275449357651257}
@@ -1085,7 +1086,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 3
+  Synchronization: 1
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 4966685993977613505}
@@ -1093,6 +1094,24 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &7173810529099904749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509735741062896507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &4853974793305964088
 GameObject:
   m_ObjectHideFlags: 0

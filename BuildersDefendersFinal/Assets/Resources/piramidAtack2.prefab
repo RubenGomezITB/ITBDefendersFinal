@@ -481,8 +481,8 @@ GameObject:
   - component: {fileID: 6502822602909858620}
   - component: {fileID: 3567574681194343965}
   - component: {fileID: -6329148013111788118}
-  - component: {fileID: 3484257521894641755}
   - component: {fileID: 2182531268671226258}
+  - component: {fileID: -4099379224254222529}
   m_Layer: 0
   m_Name: piramidAtack2
   m_TagString: Untagged
@@ -557,26 +557,6 @@ MonoBehaviour:
   life: 0
   PhotonView: {fileID: 2182531268671226258}
   _us: {fileID: 11400000, guid: 0345d07e7915afb4c8ffc9d0981159c3, type: 2}
---- !u!114 &3484257521894641755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6502822602909858621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42df43893c92aeb4a843900c78561251, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _us: {fileID: 11400000, guid: 0345d07e7915afb4c8ffc9d0981159c3, type: 2}
-  HostNexus: {fileID: 4779524392363531862, guid: a4b1c787bcfc3c2448dba24032d5d50f,
-    type: 3}
-  ClientNexus: {fileID: 6047323687532226831, guid: 88650d2d94c2d2149ac1a07151480fe5,
-    type: 3}
-  nexus: {fileID: 0}
-  agent: {fileID: 0}
-  photonView: {fileID: 2182531268671226258}
 --- !u!114 &2182531268671226258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -592,14 +572,35 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 3
+  Synchronization: 1
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 3484257521894641755}
   - {fileID: -6329148013111788118}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-4099379224254222529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6502822602909858621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
+  - SynchronizeType: 0
+    LayerIndex: 1
+  - SynchronizeType: 0
+    LayerIndex: 2
 --- !u!1 &8496487237874476734
 GameObject:
   m_ObjectHideFlags: 0

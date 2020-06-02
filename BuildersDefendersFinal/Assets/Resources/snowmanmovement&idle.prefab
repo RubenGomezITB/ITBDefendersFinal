@@ -1688,6 +1688,7 @@ GameObject:
   - component: {fileID: -3383075740564031642}
   - component: {fileID: 7815266807861873428}
   - component: {fileID: 3308622743007390944}
+  - component: {fileID: -8874814456680845914}
   m_Layer: 0
   m_Name: snowmanmovement&idle
   m_TagString: Untagged
@@ -1756,7 +1757,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 3
+  Synchronization: 1
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 2612462889835438632}
@@ -1777,9 +1778,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _us: {fileID: 11400000, guid: 028f16a371dddae4ea27ab1bcadc9a29, type: 2}
-  HostNexus: {fileID: 4779524392363531862, guid: a4b1c787bcfc3c2448dba24032d5d50f,
+  HostNexus: {fileID: 788559993430877130, guid: 36113a1de55bae5478d45175055d17d1,
     type: 3}
-  ClientNexus: {fileID: 6047323687532226831, guid: 88650d2d94c2d2149ac1a07151480fe5,
+  ClientNexus: {fileID: 7325278822849558463, guid: ff81d28bdcea2774eb1297756b071af7,
     type: 3}
   nexus: {fileID: 0}
   agent: {fileID: -3383075740564031642}
@@ -1833,3 +1834,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116973384ecfbdb4a85182d0b68376a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8874814456680845914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9185548914725122794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
