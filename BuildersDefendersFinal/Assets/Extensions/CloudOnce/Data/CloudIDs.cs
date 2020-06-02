@@ -20,6 +20,185 @@ namespace CloudOnce
         /// </summary>
         public static class AchievementIDs
         {
+            public static string Beginner
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkIuLyZg_YfEAIQAA";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "Beginner";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string Amateur
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkIuLyZg_YfEAIQAQ";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "Amateur";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string Expert
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkIuLyZg_YfEAIQAw";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "Expert";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string YouHaveAName
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkIuLyZg_YfEAIQBg";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "YouHaveAName";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string Born
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkIuLyZg_YfEAIQCA";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "Born";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string Grow
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkIuLyZg_YfEAIQCQ";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "Grow";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string Live
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkIuLyZg_YfEAIQCg";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "Live";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string Work
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkIuLyZg_YfEAIQCw";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "Work";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string Age
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkIuLyZg_YfEAIQDA";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "Age";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
         }
 
         /// <summary>

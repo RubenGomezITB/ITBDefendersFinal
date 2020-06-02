@@ -211,7 +211,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100002, guid: 64bdc1084d6305040a9c71834acbc285, type: 3}
+  - {fileID: 2100000, guid: cd111a0375d7cf84d9af46b0192c33bf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -637,10 +637,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7605562505401003257}
   - component: {fileID: 7605562505408152351}
-  - component: {fileID: 7605562503919110678}
   - component: {fileID: 7605562503919110677}
   - component: {fileID: 7605562503919110676}
-  - component: {fileID: 7605562503919110683}
+  - component: {fileID: 9009185156560204512}
+  - component: {fileID: 4506075485698503857}
   m_Layer: 0
   m_Name: Obelisco
   m_TagString: Untagged
@@ -692,20 +692,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7605562503919110678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7605562505400905945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1c32a32455b1df46b273f43549eb29c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 7605562505408152351}
-  unitDie: {fileID: 7605562503919110677}
 --- !u!114 &7605562503919110677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -731,8 +717,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 10
+  PhotonView: {fileID: 4506075485698503857}
   _us: {fileID: 11400000, guid: ff472fae1f60bc74780debb6f558a654, type: 2}
---- !u!114 &7605562503919110683
+--- !u!114 &9009185156560204512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -741,11 +728,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 7605562505400905945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1c32a32455b1df46b273f43549eb29c, type: 3}
+  m_Script: {fileID: 11500000, guid: 42df43893c92aeb4a843900c78561251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 7605562505408152351}
-  unitDie: {fileID: 7605562503919110677}
+  _us: {fileID: 11400000, guid: ff472fae1f60bc74780debb6f558a654, type: 2}
+  HostNexus: {fileID: 4779524392363531862, guid: a4b1c787bcfc3c2448dba24032d5d50f,
+    type: 3}
+  ClientNexus: {fileID: 1643760494970767794, guid: 839008c4c5a2d32409fc3acf9a174f03,
+    type: 3}
+  nexus: {fileID: 0}
+  agent: {fileID: 0}
+  photonView: {fileID: 4506075485698503857}
+--- !u!114 &4506075485698503857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7605562505400905945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 9009185156560204512}
+  - {fileID: 7605562503919110676}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &7605562505400905947
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,5 +13,44 @@ namespace CloudOnce
     /// </summary>
     public static class CloudVariables
     {
+        private static readonly CloudInt s_level = new CloudInt("Level", PersistenceType.Latest, 0);
+
+        public static int Level
+        {
+            get { return s_level.Value; }
+            set { s_level.Value = value; }
+        }
+
+        private static readonly CloudInt s_wonGames = new CloudInt("WonGames", PersistenceType.Latest, 0);
+
+        public static int WonGames
+        {
+            get { return s_wonGames.Value; }
+            set { s_wonGames.Value = value; }
+        }
+
+        private static readonly CloudBool s_name = new CloudBool("Name", PersistenceType.Latest, false);
+
+        public static bool Name
+        {
+            get { return s_name.Value; }
+            set { s_name.Value = value; }
+        }
+
+        private static readonly CloudInt s_gold = new CloudInt("Gold", PersistenceType.Latest, 0);
+
+        public static int Gold
+        {
+            get { return s_gold.Value; }
+            set { s_gold.Value = value; }
+        }
+
+        private static readonly CloudInt s_experiencie = new CloudInt("Experiencie", PersistenceType.Latest, 0);
+
+        public static int Experiencie
+        {
+            get { return s_experiencie.Value; }
+            set { s_experiencie.Value = value; }
+        }
     }
 }

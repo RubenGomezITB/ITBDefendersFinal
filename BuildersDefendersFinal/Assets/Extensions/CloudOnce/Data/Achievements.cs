@@ -14,8 +14,152 @@ namespace CloudOnce
     /// </summary>
     public static class Achievements
     {
+        private static readonly UnifiedAchievement s_beginner = new UnifiedAchievement("Beginner",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkIuLyZg_YfEAIQAA"
+#else
+            "Beginner"
+#endif
+            );
+
+        public static UnifiedAchievement Beginner
+        {
+            get { return s_beginner; }
+        }
+
+        private static readonly UnifiedAchievement s_amateur = new UnifiedAchievement("Amateur",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkIuLyZg_YfEAIQAQ"
+#else
+            "Amateur"
+#endif
+            );
+
+        public static UnifiedAchievement Amateur
+        {
+            get { return s_amateur; }
+        }
+
+        private static readonly UnifiedAchievement s_expert = new UnifiedAchievement("Expert",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkIuLyZg_YfEAIQAw"
+#else
+            "Expert"
+#endif
+            );
+
+        public static UnifiedAchievement Expert
+        {
+            get { return s_expert; }
+        }
+
+        private static readonly UnifiedAchievement s_youHaveAName = new UnifiedAchievement("YouHaveAName",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkIuLyZg_YfEAIQBg"
+#else
+            "YouHaveAName"
+#endif
+            );
+
+        public static UnifiedAchievement YouHaveAName
+        {
+            get { return s_youHaveAName; }
+        }
+
+        private static readonly UnifiedAchievement s_born = new UnifiedAchievement("Born",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkIuLyZg_YfEAIQCA"
+#else
+            "Born"
+#endif
+            );
+
+        public static UnifiedAchievement Born
+        {
+            get { return s_born; }
+        }
+
+        private static readonly UnifiedAchievement s_grow = new UnifiedAchievement("Grow",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkIuLyZg_YfEAIQCQ"
+#else
+            "Grow"
+#endif
+            );
+
+        public static UnifiedAchievement Grow
+        {
+            get { return s_grow; }
+        }
+
+        private static readonly UnifiedAchievement s_live = new UnifiedAchievement("Live",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkIuLyZg_YfEAIQCg"
+#else
+            "Live"
+#endif
+            );
+
+        public static UnifiedAchievement Live
+        {
+            get { return s_live; }
+        }
+
+        private static readonly UnifiedAchievement s_work = new UnifiedAchievement("Work",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkIuLyZg_YfEAIQCw"
+#else
+            "Work"
+#endif
+            );
+
+        public static UnifiedAchievement Work
+        {
+            get { return s_work; }
+        }
+
+        private static readonly UnifiedAchievement s_age = new UnifiedAchievement("Age",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkIuLyZg_YfEAIQDA"
+#else
+            "Age"
+#endif
+            );
+
+        public static UnifiedAchievement Age
+        {
+            get { return s_age; }
+        }
+
         public static readonly UnifiedAchievement[] All =
         {
+            s_beginner,
+            s_amateur,
+            s_expert,
+            s_youHaveAName,
+            s_born,
+            s_grow,
+            s_live,
+            s_work,
+            s_age,
         };
 
         public static string GetPlatformID(string internalId)
@@ -27,7 +171,15 @@ namespace CloudOnce
 
         private static readonly Dictionary<string, UnifiedAchievement> s_achievementDictionary = new Dictionary<string, UnifiedAchievement>
         {
-
+            { "Beginner", s_beginner },
+            { "Amateur", s_amateur },
+            { "Expert", s_expert },
+            { "YouHaveAName", s_youHaveAName },
+            { "Born", s_born },
+            { "Grow", s_grow },
+            { "Live", s_live },
+            { "Work", s_work },
+            { "Age", s_age },
         };
     }
 }

@@ -9,7 +9,8 @@ public class UnitsTranslation : MonoBehaviour
     {
         SandWorm,
         Snowman,
-        Obelisk
+        Obelisk,
+        Pyramid
     }
 
     public enum Languages
@@ -22,14 +23,16 @@ public class UnitsTranslation : MonoBehaviour
     {
         "Sand Worm",
         "Snowman",
-        "Obelisk"
+        "Obelisk",
+        "Pyramid"
     };
 
     private static String[] Spanish = new string[]
     {
         "Gusano de arena",
         "Muñeco de nieve",
-        "Obelisco"
+        "Obelisco",
+        "Piramide"
     };
 
     public static String getUnitNamePerLenguage(Unit unit, Languages languages)
@@ -58,6 +61,9 @@ public class UnitsTranslation : MonoBehaviour
 
             case Unit.Obelisk:
                 return Spanish[2];
+
+            case Unit.Pyramid:
+                return Spanish[3];
             default: return null;
         }
     }
@@ -74,6 +80,9 @@ public class UnitsTranslation : MonoBehaviour
    
             case Unit.Obelisk:
                 return English[2];
+
+            case Unit.Pyramid:
+                return English[3];    
             default: return null;
         }
     }

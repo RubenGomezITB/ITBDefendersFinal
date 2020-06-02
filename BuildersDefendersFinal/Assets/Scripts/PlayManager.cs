@@ -16,6 +16,8 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
     private bool ended = false, canStart = false;
     public Canvas Canvas;
 
+    public AchievementManager achievementManager;
+
 
     private void Start()
     {
@@ -97,6 +99,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
         yield return new WaitForSeconds(3);
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene(0);
+        achievementManager.OnLose();
     }
 
     private IEnumerator youWin()
@@ -106,6 +109,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
         yield return new WaitForSeconds(3);
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene(0);
+        achievementManager.OnWin();
     }
 
     private void timerEnded()
