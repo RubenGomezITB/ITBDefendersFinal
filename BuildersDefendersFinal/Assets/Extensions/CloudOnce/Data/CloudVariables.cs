@@ -52,5 +52,13 @@ namespace CloudOnce
             get { return s_experiencie.Value; }
             set { s_experiencie.Value = value; }
         }
+
+        private static readonly CloudInt s_energy = new CloudInt("Energy", PersistenceType.Latest, 0);
+
+        public static int Energy
+        {
+            get { return s_energy.Value; }
+            set { s_energy.Value = value; }
+        }
     }
 }

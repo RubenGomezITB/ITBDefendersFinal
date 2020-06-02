@@ -18,6 +18,8 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
 
     public AchievementManager achievementManager;
 
+    private float energyTimer = 0.0f; 
+
 
     private void Start()
     {
@@ -68,8 +70,13 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
             {
                 hostWin();
             }
+
+            energyTimer += Time.deltaTime;
+
+            if(energyTimer >= 1.0f){
+                achievementManager.OnEnergy();
+            }
         }
-        
     }
 
     private void clientWin()
@@ -95,21 +102,22 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
     private IEnumerator youLose()
     {
         winLose.text = "Perdiste";
+        achievementManager.OnLose();
         winLose.gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene(0);
-        achievementManager.OnLose();
+        
     }
 
     private IEnumerator youWin()
     {
         winLose.text = "Ganaste";
+        achievementManager.OnWin();
         winLose.gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene(0);
-        achievementManager.OnWin();
     }
 
     private void timerEnded()

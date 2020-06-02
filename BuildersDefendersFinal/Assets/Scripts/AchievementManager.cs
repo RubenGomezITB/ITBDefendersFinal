@@ -10,6 +10,7 @@ public class AchievementManager : MonoBehaviour
     {
         Cloud.OnInitializeComplete += CloudInitializeComplete;
         Cloud.Initialize(false, true);
+        CloudVariables.Energy = 0;
     }
 
     public void CloudInitializeComplete()
@@ -73,5 +74,11 @@ public class AchievementManager : MonoBehaviour
     public void OnLose(){
         CloudVariables.Gold += 50;
         CloudVariables.Experiencie += 50;
+    }
+
+    public void OnEnergy(){
+        if(CloudVariables.Energy < 10){
+        CloudVariables.Energy += 1;
+        }
     }
 }

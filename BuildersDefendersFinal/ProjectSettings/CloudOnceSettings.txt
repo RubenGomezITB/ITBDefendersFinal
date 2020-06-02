@@ -82,6 +82,13 @@
 			"DefaultValue":"0",
 			"PersistenceType":"0",
 			"AllowNegative":false
+		},
+		{
+			"Key":"Energy",
+			"Type":"0",
+			"DefaultValue":"0",
+			"PersistenceType":"0",
+			"AllowNegative":false
 		}
 	],
 	"AppleSupported":false,
