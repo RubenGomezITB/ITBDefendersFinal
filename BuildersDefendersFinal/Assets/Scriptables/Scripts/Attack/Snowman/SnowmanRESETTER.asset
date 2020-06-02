@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5346607cb4d4ee14299847769515ded7, type: 3}
-  m_Name: SandWormLvl2
+  m_Name: SnowmanRESETTER
   m_EditorClassIdentifier: 
-  Name: 0
-  Life: 15
-  Damage: 8
+  Name: 1
+  Life: 12
+  Damage: 13
   Range: 1
-  cost: 2
-  attSpeed: 3
-  movSpeed: 1
-  lvl: 2
-  cardArt: {fileID: 21300000, guid: 990588fe3e768ca4996608d152e1a734, type: 3}
-  nextLvlCard: {fileID: 11400000, guid: 77496e6d1d50e7541b6513391ec19588, type: 2}
-  upgradeGoldCost: 500
+  cost: 4
+  attSpeed: 1
+  movSpeed: 6
+  lvl: 1
+  cardArt: {fileID: 21300000, guid: eafbb0a826f79bc488edfdc340ff8c19, type: 3}
+  nextLvlCard: {fileID: 11400000, guid: 0b9b454ab901da149aef634603ac98b5, type: 2}
+  upgradeGoldCost: 0

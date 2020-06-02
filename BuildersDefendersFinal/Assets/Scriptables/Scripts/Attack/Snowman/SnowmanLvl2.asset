@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: SnowmanLvl2
   m_EditorClassIdentifier: 
   Name: 1
-  Life: 0
+  Life: 14
   Damage: 13
-  Range: 0
+  Range: 1
   cost: 5
-  attSpeed: 0
+  attSpeed: 2
   movSpeed: 5
   lvl: 2
   cardArt: {fileID: 21300000, guid: eafbb0a826f79bc488edfdc340ff8c19, type: 3}

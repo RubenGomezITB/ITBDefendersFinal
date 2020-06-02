@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 3035713}
   - component: {fileID: 3035712}
   m_Layer: 5
-  m_Name: level
+  m_Name: cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1982,7 +1982,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 888414990}
-        m_MethodName: setSettings
+        m_MethodName: SetSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2642,6 +2642,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e83c191ac6422e42b1957f4d2bfdafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingsIsActive: 0
+  soundIsActive: 0
+  musicIsActive: 0
+  ScreensList:
+  - {fileID: 889494692}
+  SettingsBtns:
+  - {fileID: 1345130192}
+  - {fileID: 2058847874}
+  - {fileID: 1457007548}
 --- !u!4 &888414991
 Transform:
   m_ObjectHideFlags: 0
@@ -2683,7 +2692,7 @@ RectTransform:
   m_GameObject: {fileID: 889494692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.7936332, y: 6.7602224, z: 1}
+  m_LocalScale: {x: 4.6092644, y: 8.19677, z: 1}
   m_Children:
   - {fileID: 1527853679}
   m_Father: {fileID: 866590018}
@@ -2840,7 +2849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 2.6152, y: 22.1}
+  m_AnchoredPosition: {x: 2.6152, y: 22.09961}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &919299426
@@ -3089,7 +3098,7 @@ GameObject:
   - component: {fileID: 1001494084}
   - component: {fileID: 1001494083}
   m_Layer: 5
-  m_Name: level
+  m_Name: cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3167,7 +3176,7 @@ GameObject:
   - component: {fileID: 1024339849}
   - component: {fileID: 1024339848}
   m_Layer: 5
-  m_Name: level
+  m_Name: cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3458,7 +3467,7 @@ GameObject:
   - component: {fileID: 1196911960}
   - component: {fileID: 1196911959}
   m_Layer: 5
-  m_Name: level
+  m_Name: cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4031,7 +4040,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 888414990}
-        m_MethodName: setSound
+        m_MethodName: SetSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4235,7 +4244,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 888414990}
-        m_MethodName: exitGame
+        m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4526,7 +4535,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 888414990}
-        m_MethodName: setSettings
+        m_MethodName: SetSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5171,9 +5180,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: 633ed94cabf99994c9e75f436b8f9767, type: 2}
   cardImage: {fileID: 0}
-  level: {fileID: 1196911959}
+  level: {fileID: 0}
+  cost: {fileID: 1196911959}
   life: {fileID: 425853244}
   attack: {fileID: 1918364416}
+  goldText: {fileID: 0}
+  cardScreen: {fileID: 0}
+  cardScreenIsActive: 0
 --- !u!1 &1743320974
 GameObject:
   m_ObjectHideFlags: 0
@@ -5457,9 +5470,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: 028f16a371dddae4ea27ab1bcadc9a29, type: 2}
   cardImage: {fileID: 0}
-  level: {fileID: 1024339848}
+  level: {fileID: 0}
+  cost: {fileID: 1024339848}
   life: {fileID: 21511203}
   attack: {fileID: 562751607}
+  goldText: {fileID: 0}
+  cardScreen: {fileID: 0}
+  cardScreenIsActive: 0
 --- !u!1 &1781600240
 GameObject:
   m_ObjectHideFlags: 0
@@ -6346,11 +6363,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161dbabaf1fa0b94e969f278a389602f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 0}
+  card: {fileID: 11400000, guid: 13a045be86879484ab511dca350ade73, type: 2}
   cardImage: {fileID: 0}
-  level: {fileID: 3035712}
+  level: {fileID: 0}
+  cost: {fileID: 3035712}
   life: {fileID: 473388424}
   attack: {fileID: 964885806}
+  goldText: {fileID: 0}
+  cardScreen: {fileID: 0}
+  cardScreenIsActive: 0
 --- !u!1 &2030755877
 GameObject:
   m_ObjectHideFlags: 0
@@ -6380,6 +6401,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e83c191ac6422e42b1957f4d2bfdafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingsIsActive: 0
+  soundIsActive: 0
+  musicIsActive: 0
+  ScreensList: []
+  SettingsBtns: []
 --- !u!4 &2030755879
 Transform:
   m_ObjectHideFlags: 0
@@ -6551,7 +6577,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 888414990}
-        m_MethodName: setMusic
+        m_MethodName: SetMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6886,9 +6912,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: ff472fae1f60bc74780debb6f558a654, type: 2}
   cardImage: {fileID: 0}
-  level: {fileID: 1001494083}
+  level: {fileID: 0}
+  cost: {fileID: 1001494083}
   life: {fileID: 1919379998}
   attack: {fileID: 1941481875}
+  goldText: {fileID: 0}
+  cardScreen: {fileID: 0}
+  cardScreenIsActive: 0
 --- !u!1001 &7605562503851034643
 PrefabInstance:
   m_ObjectHideFlags: 0

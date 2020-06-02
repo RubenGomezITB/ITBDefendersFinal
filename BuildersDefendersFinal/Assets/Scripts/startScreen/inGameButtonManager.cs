@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class inGameButtonManager : MonoBehaviour
+public class InGameButtonManager : MonoBehaviour
 {
     [SerializeField] private bool settingsIsActive;
     [SerializeField] private bool soundIsActive;
@@ -25,7 +25,7 @@ public class inGameButtonManager : MonoBehaviour
         
     }
 
-    public void setSettings() {
+    public void SetSettings() {
         if (settingsIsActive)
         {
             ScreensList[0].SetActive(false);
@@ -37,7 +37,7 @@ public class inGameButtonManager : MonoBehaviour
         settingsIsActive = !settingsIsActive;
     }
 
-    private void activateSound()
+    private void ActivateSound()
     {
         ColorBlock colors = SettingsBtns[0].colors;
         colors.normalColor = Color.green;
@@ -46,7 +46,7 @@ public class inGameButtonManager : MonoBehaviour
         SettingsBtns[0].image.color = new Color32(0, 255, 0, 255);
     }
 
-    private void stopSound()
+    private void StopSound()
     {
         ColorBlock colors = SettingsBtns[0].colors;
         colors.normalColor = Color.red;
@@ -55,7 +55,7 @@ public class inGameButtonManager : MonoBehaviour
         SettingsBtns[0].image.color = new Color32(255, 0, 0, 255);
     }
 
-    private void activateMusic()
+    private void ActivateMusic()
     {
         ColorBlock colors = SettingsBtns[1].colors;
         colors.normalColor = Color.green;
@@ -64,7 +64,7 @@ public class inGameButtonManager : MonoBehaviour
         SettingsBtns[1].image.color = new Color32(0, 255, 0, 255);
     }
 
-    private void stopMusic()
+    private void StopMusic()
     {
         ColorBlock colors = SettingsBtns[1].colors;
         colors.normalColor = Color.red;
@@ -73,34 +73,34 @@ public class inGameButtonManager : MonoBehaviour
         SettingsBtns[1].image.color = new Color32(255, 0, 0, 255);
     }
 
-    public void setSound()
+    public void SetSound()
     {
         if (soundIsActive)
         {
-            stopSound();
+            StopSound();
         }
         else
         {
-            activateSound();
+            ActivateSound();
         }
         soundIsActive = !soundIsActive;
     }
 
-    public void setMusic()
+    public void SetMusic()
     {
         if (musicIsActive)
         {
-            stopMusic();
+            StopMusic();
         }
         else
         {
-            activateMusic();
+            ActivateMusic();
         }
         musicIsActive = !musicIsActive;
     }
 
-    public void exitGame() {
+    public void ExitGame() {
         SceneManager.LoadScene("startSceneKleyton", LoadSceneMode.Single);
-        setSettings();
+        SetSettings();
     }
 }

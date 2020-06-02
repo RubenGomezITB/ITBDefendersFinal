@@ -428,7 +428,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: 13a045be86879484ab511dca350ade73, type: 2}
   cardImage: {fileID: 0}
-  level: {fileID: 1873261020}
+  level: {fileID: 0}
+  cost: {fileID: 1873261020}
   life: {fileID: 1600434191}
   attack: {fileID: 191036388}
   goldText: {fileID: 1244176553}
@@ -920,7 +921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3328,6 +3329,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215136498}
   m_CullTransparentMesh: 0
+--- !u!1 &215588351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 215588352}
+  - component: {fileID: 215588354}
+  - component: {fileID: 215588353}
+  m_Layer: 5
+  m_Name: LvlContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &215588352
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215588351}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.23047222, y: 0.047796242, z: 1}
+  m_Children:
+  - {fileID: 1216985225}
+  m_Father: {fileID: 1454136500}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -18.2, y: 33.7}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &215588353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215588351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &215588354
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215588351}
+  m_CullTransparentMesh: 0
 --- !u!1 &218182804
 GameObject:
   m_ObjectHideFlags: 0
@@ -4994,7 +5070,7 @@ GameObject:
   - component: {fileID: 345745551}
   - component: {fileID: 345745550}
   m_Layer: 5
-  m_Name: level
+  m_Name: cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6416,7 +6492,7 @@ GameObject:
   - component: {fileID: 449837656}
   - component: {fileID: 449837655}
   m_Layer: 5
-  m_Name: level
+  m_Name: cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9706,7 +9782,7 @@ GameObject:
   - component: {fileID: 890741259}
   - component: {fileID: 890741258}
   m_Layer: 5
-  m_Name: level
+  m_Name: cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11436,7 +11512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -12115,7 +12191,7 @@ RectTransform:
   m_Children:
   - {fileID: 1723561379}
   m_Father: {fileID: 1454136500}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12189,7 +12265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8773585, g: 0.3540129, b: 0.27727836, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -12305,7 +12381,7 @@ GameObject:
   - component: {fileID: 1169680065}
   - component: {fileID: 1169680064}
   m_Layer: 5
-  m_Name: Carta1
+  m_Name: clickedCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12348,7 +12424,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: 633ed94cabf99994c9e75f436b8f9767, type: 2}
   cardImage: {fileID: 0}
-  level: {fileID: 1562967600}
+  level: {fileID: 1216985226}
+  cost: {fileID: 1562967600}
   life: {fileID: 47393613}
   attack: {fileID: 1478693919}
   goldText: {fileID: 1244176553}
@@ -13529,6 +13606,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216955024}
   m_CullTransparentMesh: 0
+--- !u!1 &1216985224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1216985225}
+  - component: {fileID: 1216985227}
+  - component: {fileID: 1216985226}
+  m_Layer: 5
+  m_Name: LvlText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1216985225
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216985224}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.621537, y: 2.8, z: 1}
+  m_Children: []
+  m_Father: {fileID: 215588352}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.0000052221, y: 0.00021998}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1216985226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216985224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: LVL 1
+--- !u!222 &1216985227
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216985224}
+  m_CullTransparentMesh: 0
 --- !u!1 &1231094805
 GameObject:
   m_ObjectHideFlags: 0
@@ -14347,7 +14502,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: 633ed94cabf99994c9e75f436b8f9767, type: 2}
   cardImage: {fileID: 0}
-  level: {fileID: 345745550}
+  level: {fileID: 0}
+  cost: {fileID: 345745550}
   life: {fileID: 1027397060}
   attack: {fileID: 1926941833}
   goldText: {fileID: 1244176553}
@@ -15827,12 +15983,13 @@ RectTransform:
   m_LocalScale: {x: 9.858511, y: 4.1598086, z: 1}
   m_Children:
   - {fileID: 1169680063}
-  - {fileID: 1160114127}
-  - {fileID: 1653082609}
   - {fileID: 1616404264}
+  - {fileID: 1653082609}
+  - {fileID: 1160114127}
   - {fileID: 1239207916}
   - {fileID: 133049778}
   - {fileID: 968766373}
+  - {fileID: 215588352}
   m_Father: {fileID: 1721890824}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16971,7 +17128,7 @@ GameObject:
   - component: {fileID: 1562967601}
   - component: {fileID: 1562967600}
   m_Layer: 5
-  m_Name: level
+  m_Name: cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17683,7 +17840,7 @@ RectTransform:
   m_Children:
   - {fileID: 69675464}
   m_Father: {fileID: 1454136500}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17757,7 +17914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.44526067, g: 0.764151, b: 0.29196337, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -18159,7 +18316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.43137258, g: 0.73333335, b: 0.2784314, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -18422,7 +18579,6 @@ GameObject:
   - component: {fileID: 1694625902}
   - component: {fileID: 1694625901}
   - component: {fileID: 1694625900}
-  - component: {fileID: 1694625903}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -18478,31 +18634,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1694625903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1694625899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1029682b8a75fa34e959fce2864fc436, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardScreen: {fileID: 0}
-  friendsScreen: {fileID: 0}
-  creditsScreen: {fileID: 0}
-  changeLogScreen: {fileID: 0}
-  friendsScreenIsActive: 0
-  soundIsActive: 0
-  musicIsActive: 0
-  chGoBackBtnIsActive: 0
-  crGoBackBtnIsActive: 0
-  ScreensList: []
-  SettingsBtns: []
-  Cards: []
-  cardScreenIsActive: 0
 --- !u!1 &1699012616
 GameObject:
   m_ObjectHideFlags: 0
@@ -18953,7 +19084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -20155,7 +20286,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: ff472fae1f60bc74780debb6f558a654, type: 2}
   cardImage: {fileID: 0}
-  level: {fileID: 449837655}
+  level: {fileID: 0}
+  cost: {fileID: 449837655}
   life: {fileID: 823704322}
   attack: {fileID: 1724407596}
   goldText: {fileID: 1244176553}
@@ -20782,7 +20914,7 @@ GameObject:
   - component: {fileID: 1873261021}
   - component: {fileID: 1873261020}
   m_Layer: 5
-  m_Name: level
+  m_Name: cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21520,7 +21652,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: 028f16a371dddae4ea27ab1bcadc9a29, type: 2}
   cardImage: {fileID: 0}
-  level: {fileID: 890741258}
+  level: {fileID: 0}
+  cost: {fileID: 890741258}
   life: {fileID: 180176791}
   attack: {fileID: 465035507}
   goldText: {fileID: 1244176553}
