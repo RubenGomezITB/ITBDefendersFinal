@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5346607cb4d4ee14299847769515ded7, type: 3}
-  m_Name: SandWormLvl2
+  m_Name: MontainRESETTER
   m_EditorClassIdentifier: 
-  Name: 0
-  Life: 15
-  Damage: 8
-  Range: 1
-  cost: 2
-  attSpeed: 3
-  movSpeed: 1
-  lvl: 2
-  cardArt: {fileID: 21300000, guid: 990588fe3e768ca4996608d152e1a734, type: 3}
-  nextLvlCard: {fileID: 11400000, guid: 77496e6d1d50e7541b6513391ec19588, type: 2}
-  upgradeGoldCost: 500
+  Name: 2
+  Life: 35
+  Damage: 5
+  Range: 3
+  cost: 3
+  attSpeed: 2
+  movSpeed: 0
+  lvl: 1
+  cardArt: {fileID: 21300000, guid: 810661c54c9d26242ab53da204865102, type: 3}
+  nextLvlCard: {fileID: 11400000, guid: 1f4c00ffe7cb6f84f9b344da0e1702bb, type: 2}
+  upgradeGoldCost: 1500

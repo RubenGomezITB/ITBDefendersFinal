@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5346607cb4d4ee14299847769515ded7, type: 3}
-  m_Name: SandWormLvl2
+  m_Name: ObeliskLv3
   m_EditorClassIdentifier: 
-  Name: 0
-  Life: 15
-  Damage: 8
-  Range: 1
-  cost: 2
-  attSpeed: 3
-  movSpeed: 1
-  lvl: 2
-  cardArt: {fileID: 21300000, guid: 990588fe3e768ca4996608d152e1a734, type: 3}
-  nextLvlCard: {fileID: 11400000, guid: 77496e6d1d50e7541b6513391ec19588, type: 2}
-  upgradeGoldCost: 500
+  Name: 2
+  Life: 50
+  Damage: 7
+  Range: 5
+  cost: 4
+  attSpeed: 2
+  movSpeed: 0
+  lvl: 3
+  cardArt: {fileID: 21300000, guid: 406360cdb4358a441a933a6fa09e3174, type: 3}
+  nextLvlCard: {fileID: 11400000, guid: f6080e4a92d6ec743bc4e617e72c52bd, type: 2}
+  upgradeGoldCost: 900

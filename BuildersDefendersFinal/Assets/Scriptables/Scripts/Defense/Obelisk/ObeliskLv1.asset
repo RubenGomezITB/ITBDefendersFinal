@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5346607cb4d4ee14299847769515ded7, type: 3}
-  m_Name: Obelisk
+  m_Name: ObeliskLv1
   m_EditorClassIdentifier: 
   Name: 2
   Life: 40
@@ -20,3 +20,5 @@ MonoBehaviour:
   attSpeed: 2
   movSpeed: 0
   lvl: 1
+  cardArt: {fileID: 21300000, guid: 406360cdb4358a441a933a6fa09e3174, type: 3}
+  nextLvlCard: {fileID: 11400000, guid: 25807ef2ad76927449b2db48235072a9, type: 2}

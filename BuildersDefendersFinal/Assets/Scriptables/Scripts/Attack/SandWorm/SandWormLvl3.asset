@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: SandWormLvl3
   m_EditorClassIdentifier: 
   Name: 0
-  Life: 0
-  Damage: 7
+  Life: 20
+  Damage: 10
   Range: 1
   cost: 2
-  attSpeed: 1
-  movSpeed: 1
+  attSpeed: 4
+  movSpeed: 2
   lvl: 3
+  cardArt: {fileID: 21300000, guid: 990588fe3e768ca4996608d152e1a734, type: 3}
+  nextLvlCard: {fileID: 11400000, guid: 421fbbfd6ab580545836f34522cd5456, type: 2}
+  upgradeGoldCost: 1000
