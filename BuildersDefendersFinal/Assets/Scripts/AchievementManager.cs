@@ -17,12 +17,12 @@ public class AchievementManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(PlayerPrefs.GetInt("Experience", 0));
-        if (Input.GetKeyDown("space"))
-        {
-            OnWin();
-            OnLose();
-        }
+        // Debug.Log(PlayerPrefs.GetInt("Experience", 0));
+        // if (Input.GetKeyDown("space"))
+        // {
+        //     OnWin();
+        //     OnLose();
+        // }
 
         if (PlayerPrefs.GetInt("WonGames", 0) == 1)
         {

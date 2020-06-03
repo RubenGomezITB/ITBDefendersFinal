@@ -16,6 +16,10 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
     private bool ended = false, canStart = false;
     public Canvas Canvas;
 
+    public AchievementManager achievementManager;
+    public float totalEnergy;
+    private float energyTimer = 0.0f; 
+
 
     private void Start()
     {
@@ -66,8 +70,14 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
             {
                 hostWin();
             }
+
+            energyTimer += Time.deltaTime;
+
+            if(energyTimer >= 1.0f && totalEnergy <= 9.0f){
+                totalEnergy += 1.0f;
+                energyTimer = 0.0f;
+            }
         }
-        
     }
 
     private void clientWin()
@@ -93,6 +103,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
     private IEnumerator youLose()
     {
         winLose.text = "Perdiste";
+        achievementManager.OnLose();
         winLose.gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
         PhotonNetwork.LeaveRoom();
@@ -102,6 +113,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
     private IEnumerator youWin()
     {
         winLose.text = "Ganaste";
+        achievementManager.OnWin();
         winLose.gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
         PhotonNetwork.LeaveRoom();
