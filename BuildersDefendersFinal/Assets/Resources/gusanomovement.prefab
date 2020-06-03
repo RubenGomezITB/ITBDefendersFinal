@@ -1188,6 +1188,7 @@ GameObject:
   - component: {fileID: 2533270389083258415}
   - component: {fileID: 7173810529099904749}
   - component: {fileID: 5820634050188621677}
+  - component: {fileID: 814032344}
   m_Layer: 0
   m_Name: gusanomovement
   m_TagString: attack
@@ -1291,6 +1292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116973384ecfbdb4a85182d0b68376a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitLife: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!195 &-2005275449357651257
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1350,7 +1353,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 0
+    Name: attack
+  - Type: 4
+    SynchronizeType: 0
+    Name: death
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
@@ -1367,6 +1376,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 3.1453857}
   m_Center: {x: 0, y: 0, z: -1.0726929}
+--- !u!54 &814032344
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509735741062896507}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &4558155398905625624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,6 +1455,7 @@ MonoBehaviour:
   DetectRange: {fileID: 4599925776883827361}
   attackOnCooldown: 0
   isAnAttackUnit: 1
+  animator: {fileID: 0}
 --- !u!1 &4853974793305964088
 GameObject:
   m_ObjectHideFlags: 0

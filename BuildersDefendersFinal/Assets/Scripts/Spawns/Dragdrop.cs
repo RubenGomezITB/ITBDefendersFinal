@@ -99,7 +99,7 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (PlayManager.energyTimer >= UnitsScriptable.cost)
+        if (PlayManager.energyTimer >= UnitsScriptable.cost && PlayManager.energyTimer > 0)
         {
             if (canMove)
             {

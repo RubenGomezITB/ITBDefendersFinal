@@ -6,8 +6,8 @@ using UnityEngine.Serialization;
 
 public class UnitDetectRange : MonoBehaviour
 {
-    private CapsuleCollider CapsuleCollider;
-    public String DefenseTag = "defense";
+    private SphereCollider SphereCollider;
+    public String DefenseTag;
     private UnitDie _unitDie;
     public GameObject target;
 
@@ -17,7 +17,7 @@ public class UnitDetectRange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CapsuleCollider = GetComponent<CapsuleCollider>();
+        SphereCollider = GetComponent<SphereCollider>();
     }
     
     private void OnTriggerEnter(Collider other)

@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: Nexus
   m_EditorClassIdentifier: 
   Name: 0
-  Life: 2000
+  Life: 100
   Damage: 0
   Range: 0
   cost: 0
   attSpeed: 0
   movSpeed: 0
   lvl: 0
+  cardArt: {fileID: 0}
+  nextLvlCard: {fileID: 0}
+  upgradeGoldCost: 0
