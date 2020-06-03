@@ -19,11 +19,13 @@ public class UnitAttackDetecter : MonoBehaviour
     public bool isAnAttackUnit = false;
     private PhotonView PhotonView;
 
+    public Animator animator;
 
     void Start()
     {
         PhotonView = GetComponentInParent<PhotonView>();
         _boxCollider = GetComponent<BoxCollider>();
+        animator = transform.parent.transform.GetComponent<Animator>();
     }
 
     private void Update()
@@ -75,10 +77,12 @@ public class UnitAttackDetecter : MonoBehaviour
 
     private IEnumerator attacking()
     {
+        animator.SetBool("attack", true);
         _life.recibeDamage(_us.Damage);
         attackOnCooldown = true;
         yield return new WaitForSeconds(_us.attSpeed);
         attackOnCooldown = false;
+        animator.SetBool("attack", false);
     }
 
     private IEnumerator attack()
