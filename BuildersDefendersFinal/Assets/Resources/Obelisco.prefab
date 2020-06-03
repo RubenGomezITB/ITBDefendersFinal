@@ -385,6 +385,7 @@ MonoBehaviour:
   DetectRange: {fileID: 2416373814735603742}
   attackOnCooldown: 0
   isAnAttackUnit: 0
+  animator: {fileID: 0}
 --- !u!114 &2416373814735603742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1106,6 +1107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116973384ecfbdb4a85182d0b68376a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitLife: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &7605562503919110676
 MonoBehaviour:
   m_ObjectHideFlags: 0
