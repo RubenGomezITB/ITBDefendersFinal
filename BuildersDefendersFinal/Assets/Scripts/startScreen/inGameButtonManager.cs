@@ -11,12 +11,16 @@ public class InGameButtonManager : MonoBehaviour
     [SerializeField] private bool musicIsActive;
     public List<GameObject> ScreensList = new List<GameObject>();
     public List<Button> SettingsBtns = new List<Button>();
+    AudioSource audioSource;
+    public AudioClip[] listAudio;
     // Start is called before the first frame update
     void Start()
     {
         settingsIsActive = false;
         soundIsActive = true;
         musicIsActive = true;
+
+        audioSource = GetComponent<AudioSource>();
     }
     
 
@@ -28,6 +32,11 @@ public class InGameButtonManager : MonoBehaviour
         else
         {
             ScreensList[0].SetActive(true);
+        }
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = listAudio[0];
+            audioSource.Play();
         }
         settingsIsActive = !settingsIsActive;
     }
@@ -78,6 +87,11 @@ public class InGameButtonManager : MonoBehaviour
         {
             ActivateSound();
         }
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = listAudio[1];
+            audioSource.Play();
+        }
         soundIsActive = !soundIsActive;
     }
 
@@ -91,10 +105,20 @@ public class InGameButtonManager : MonoBehaviour
         {
             ActivateMusic();
         }
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = listAudio[1];
+            audioSource.Play();
+        }
         musicIsActive = !musicIsActive;
     }
 
     public void ExitGame() {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = listAudio[0];
+            audioSource.Play();
+        }
         SceneManager.LoadScene("startSceneKleyton", LoadSceneMode.Single);
         SetSettings();
     }

@@ -23,10 +23,12 @@ public class MainScreenButtonManager : MonoBehaviour
     private List<bool> UpgradePanelBools = new List<bool> {false, false, false, false};
     [SerializeField] public bool cardScreenIsActive;
     private DisplayCardAttributesScript cardScreenScript;
+    AudioSource audioSource;
+    public AudioClip[] listAudio;
+    
 
-
-    // Start is called before the first frame update
-    void Start()
+// Start is called before the first frame update
+void Start()
     {
         cardScreenScript = cardScreen.transform.GetChild(0).GetComponent<DisplayCardAttributesScript>();
         friendsScreenIsActive = false;
@@ -34,6 +36,8 @@ public class MainScreenButtonManager : MonoBehaviour
         musicIsActive = true;
         chGoBackBtnIsActive = false;
         crGoBackBtnIsActive = false;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -49,6 +53,11 @@ public class MainScreenButtonManager : MonoBehaviour
         }
 
         friendsScreenIsActive = !friendsScreenIsActive;
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = listAudio[1];
+            audioSource.Play();
+        }
     }
 
     public void DisplayPurchasePanel()
@@ -59,6 +68,11 @@ public class MainScreenButtonManager : MonoBehaviour
         }
 
         ScreensList[0].SetActive(true);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = listAudio[0];
+            audioSource.Play();
+        }
     }
 
     public void DisplayDeckPanel()
@@ -69,6 +83,11 @@ public class MainScreenButtonManager : MonoBehaviour
         }
 
         ScreensList[1].SetActive(true);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = listAudio[0];
+            audioSource.Play();
+        }
     }
 
     public void DisplayHomePanel()
@@ -79,6 +98,11 @@ public class MainScreenButtonManager : MonoBehaviour
         }
 
         ScreensList[2].SetActive(true);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = listAudio[0];
+            audioSource.Play();
+        }
     }
 
     public void DisplayAchievementsPanel()
@@ -89,6 +113,11 @@ public class MainScreenButtonManager : MonoBehaviour
         }
 
         ScreensList[3].SetActive(true);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = listAudio[0];
+            audioSource.Play();
+        }
     }
 
     public void DisplaySettingsPanel()
@@ -99,6 +128,11 @@ public class MainScreenButtonManager : MonoBehaviour
         }
 
         ScreensList[4].SetActive(true);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = listAudio[0];
+            audioSource.Play();
+        }
     }
 
     private void ActivateSound()
@@ -108,6 +142,7 @@ public class MainScreenButtonManager : MonoBehaviour
         colors.highlightedColor = new Color32(0, 255, 0, 255);
         SettingsBtns[0].colors = colors;
         SettingsBtns[0].image.color = new Color32(0, 255, 0, 255);
+        
     }
 
     private void StopSound()
@@ -117,6 +152,7 @@ public class MainScreenButtonManager : MonoBehaviour
         colors.highlightedColor = new Color32(255, 0, 0, 255);
         SettingsBtns[0].colors = colors;
         SettingsBtns[0].image.color = new Color32(255, 0, 0, 255);
+        
     }
 
     private void ActivateMusic()
@@ -126,6 +162,7 @@ public class MainScreenButtonManager : MonoBehaviour
         colors.highlightedColor = new Color32(0, 255, 0, 255);
         SettingsBtns[1].colors = colors;
         SettingsBtns[1].image.color = new Color32(0, 255, 0, 255);
+        
     }
 
     private void StopMusic()
@@ -135,6 +172,7 @@ public class MainScreenButtonManager : MonoBehaviour
         colors.highlightedColor = new Color32(255, 0, 0, 255);
         SettingsBtns[1].colors = colors;
         SettingsBtns[1].image.color = new Color32(255, 0, 0, 255);
+        
     }
 
     public void SetSound()
@@ -146,6 +184,11 @@ public class MainScreenButtonManager : MonoBehaviour
         else
         {
             ActivateSound();
+        }
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = listAudio[1];
+            audioSource.Play();
         }
 
         soundIsActive = !soundIsActive;
@@ -161,6 +204,11 @@ public class MainScreenButtonManager : MonoBehaviour
         {
             ActivateMusic();
         }
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = listAudio[1];
+            audioSource.Play();
+        }
 
         musicIsActive = !musicIsActive;
     }
@@ -174,6 +222,11 @@ public class MainScreenButtonManager : MonoBehaviour
         else
         {
             creditsScreen.SetActive(true);
+        }
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = listAudio[1];
+            audioSource.Play();
         }
 
         crGoBackBtnIsActive = !crGoBackBtnIsActive;
@@ -189,71 +242,22 @@ public class MainScreenButtonManager : MonoBehaviour
         {
             changeLogScreen.SetActive(true);
         }
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = listAudio[1];
+            audioSource.Play();
+        }
 
         chGoBackBtnIsActive = !chGoBackBtnIsActive;
     }
 
-    public void DisplayUpgradePanel1()
-    {
-        if (UpgradePanelBools[0])
-        {
-            Cards[0].transform.GetChild(0).gameObject.SetActive(false);
-        }
-        else
-        {
-            Cards[0].transform.GetChild(0).gameObject.SetActive(true);
-        }
-
-        UpgradePanelBools[0] = !UpgradePanelBools[0];
-    }
-
-    public void DisplayUpgradePanel2()
-    {
-        if (UpgradePanelBools[1])
-        {
-            Cards[1].transform.GetChild(0).gameObject.SetActive(false);
-        }
-        else
-        {
-            Cards[1].transform.GetChild(0).gameObject.SetActive(true);
-        }
-
-        UpgradePanelBools[1] = !UpgradePanelBools[1];
-    }
-
-
-    public void DisplayUpgradePanel3()
-    {
-        if (UpgradePanelBools[2])
-        {
-            Cards[2].transform.GetChild(0).gameObject.SetActive(false);
-        }
-        else
-        {
-            Cards[2].transform.GetChild(0).gameObject.SetActive(true);
-        }
-
-        UpgradePanelBools[2] = !UpgradePanelBools[2];
-    }
-
-
-    public void DisplayUpgradePanel4()
-    {
-        if (UpgradePanelBools[3])
-        {
-            Cards[3].transform.GetChild(0).gameObject.SetActive(false);
-        }
-        else
-        {
-            Cards[3].transform.GetChild(0).gameObject.SetActive(true);
-        }
-
-        UpgradePanelBools[3] = !UpgradePanelBools[3];
-    }
-
-
     public void playGame()
     {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = listAudio[1];
+            audioSource.Play();
+        }
         launcher.ConnectToGame();
     }
 
@@ -266,6 +270,11 @@ public class MainScreenButtonManager : MonoBehaviour
         else
         {
             cardScreen.SetActive(true);
+        }
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = listAudio[0];
+            audioSource.Play();
         }
 
         cardScreenIsActive = !cardScreenIsActive;
