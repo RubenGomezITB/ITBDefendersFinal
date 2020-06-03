@@ -1041,9 +1041,10 @@ GameObject:
   - component: {fileID: 7605562503919110676}
   - component: {fileID: 4506075485698503857}
   - component: {fileID: 4031228154433880071}
+  - component: {fileID: 3930476103967101245}
   m_Layer: 0
   m_Name: Obelisco
-  m_TagString: Untagged
+  m_TagString: defense
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1174,6 +1175,19 @@ MonoBehaviour:
     LayerIndex: 4
   - SynchronizeType: 0
     LayerIndex: 5
+--- !u!65 &3930476103967101245
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7605562505400905945}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.2570806, y: 20.426168, z: 5.7708416}
+  m_Center: {x: 1.0781753, y: 9.713085, z: -0.8279145}
 --- !u!1 &7605562505400905947
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8657426876424796335}
   m_Layer: 0
   m_Name: nexHost
-  m_TagString: Untagged
+  m_TagString: defense
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

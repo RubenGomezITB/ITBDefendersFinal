@@ -771,9 +771,10 @@ GameObject:
   - component: {fileID: -6329148013111788118}
   - component: {fileID: 2182531268671226258}
   - component: {fileID: -4099379224254222529}
+  - component: {fileID: 8568675318994557621}
   m_Layer: 0
   m_Name: piramidAtack2
-  m_TagString: Untagged
+  m_TagString: defense
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -891,6 +892,19 @@ MonoBehaviour:
     LayerIndex: 1
   - SynchronizeType: 0
     LayerIndex: 2
+--- !u!65 &8568675318994557621
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6502822602909858621}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.409265, y: 6.56126, z: 9.211161}
+  m_Center: {x: -0.056718886, y: 2.3614216, z: 0.13455495}
 --- !u!1 &8026327571079963894
 GameObject:
   m_ObjectHideFlags: 0

@@ -2219,9 +2219,10 @@ GameObject:
   - component: {fileID: 7815266807861873428}
   - component: {fileID: 3308622743007390944}
   - component: {fileID: -8874814456680845914}
+  - component: {fileID: 3026173797975873974}
   m_Layer: 0
   m_Name: snowmanmovement&idle
-  m_TagString: Untagged
+  m_TagString: attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2389,3 +2390,16 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
+--- !u!65 &3026173797975873974
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9185548914725122794}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.3262234, z: 1}
+  m_Center: {x: 0, y: 1.1616268, z: 0}

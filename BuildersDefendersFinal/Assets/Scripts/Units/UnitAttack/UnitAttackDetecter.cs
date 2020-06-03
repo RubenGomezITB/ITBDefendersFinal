@@ -19,7 +19,7 @@ public class UnitAttackDetecter : MonoBehaviour
     public bool isAnAttackUnit = false;
     private PhotonView PhotonView;
 
- 
+
     void Start()
     {
         PhotonView = GetComponentInParent<PhotonView>();
@@ -36,14 +36,10 @@ public class UnitAttackDetecter : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
         if (DetectRange.isOnDetectRange && !isOnAttackRange && isAnAttackUnit)
         {
-            if (PhotonView.IsMine)
-            {
-                 transform.parent.position =
-                                Vector3.MoveTowards(transform.parent.position, DetectRange.target.transform.position, .01f);
-            }
+            transform.parent.position =
+                Vector3.MoveTowards(transform.parent.position, DetectRange.target.transform.position, .01f);
         }
     }
 
@@ -71,9 +67,8 @@ public class UnitAttackDetecter : MonoBehaviour
             {
                 if (_life != null)
                 {
-                     StartCoroutine(attacking());
+                    StartCoroutine(attacking());
                 }
-               
             }
         }
     }
@@ -88,7 +83,6 @@ public class UnitAttackDetecter : MonoBehaviour
 
     private IEnumerator attack()
     {
-        
         yield return new WaitForSeconds(_us.attSpeed);
         attackOnCooldown = false;
     }

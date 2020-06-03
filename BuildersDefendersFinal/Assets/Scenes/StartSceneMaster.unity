@@ -668,6 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: {fileID: 822820927}
+  PlayButton: {fileID: 1811185156}
 --- !u!4 &149024916
 Transform:
   m_ObjectHideFlags: 0
@@ -11667,7 +11668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1811185154
 RectTransform:
   m_ObjectHideFlags: 0

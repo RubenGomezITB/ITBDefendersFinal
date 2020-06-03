@@ -15,6 +15,8 @@ public class Launcher : MonoBehaviourPunCallbacks
     private bool isLoading = false;
 
     public Text playerName;
+
+    public Button PlayButton;
     //public Text playerName, debugText;
 
 
@@ -49,6 +51,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnConnectedToMaster()
     {
+        PlayButton.gameObject.SetActive(true);
         Debug.Log("conectado a master bro");
         //debugText.text += "\n Conectado a master";
         //debugText.text += "\n " + PhotonNetwork.CloudRegion;
