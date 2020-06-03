@@ -7,23 +7,16 @@ public class AchievementManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetInt("Experience",PlayerPrefs.GetInt("Experience", 0));
-        PlayerPrefs.SetInt("Gold",PlayerPrefs.GetInt("Gold", 0));
-        PlayerPrefs.SetInt("Level",PlayerPrefs.GetInt("Level", 0));
-        PlayerPrefs.SetInt("WonGames",PlayerPrefs.GetInt("WonGames", 0));
-        PlayerPrefs.SetInt("Name",PlayerPrefs.GetInt("Name", 0));
+        // PlayerPrefs.SetInt("Experience",PlayerPrefs.GetInt("Experience", 0));
+        // PlayerPrefs.SetInt("Gold",PlayerPrefs.GetInt("Gold", 0));
+        // PlayerPrefs.SetInt("Level",PlayerPrefs.GetInt("Level", 0));
+        // PlayerPrefs.SetInt("WonGames",PlayerPrefs.GetInt("WonGames", 0));
+        // PlayerPrefs.SetInt("Name",PlayerPrefs.GetInt("Name", 0));
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Debug.Log(PlayerPrefs.GetInt("Experience", 0));
-        // if (Input.GetKeyDown("space"))
-        // {
-        //     OnWin();
-        //     OnLose();
-        // }
-
+    //Won Games
         if (PlayerPrefs.GetInt("WonGames", 0) == 1)
         {
             //Achievements.Beginner.Unlock();
@@ -40,32 +33,17 @@ public class AchievementManager : MonoBehaviour
             Debug.Log("Expert");
         }
 
-
+    //Name is setted(first time in the game)
         if (PlayerPrefs.GetInt("Name", 0) == 1){
             //Achievements.YouHaveAName.Unlock();
         }
 
+    //Experience Level
         if(PlayerPrefs.GetInt("Experience", 0) == 100){
-            PlayerPrefs.SetInt("Level",1);
+            PlayerPrefs.SetInt("Level",PlayerPrefs.GetInt("Level", 0)+1);
+            PlayerPrefs.SetInt("Experience", 0);
             //Achievements.Born.Unlock();
         }
-        else if(PlayerPrefs.GetInt("Experience", 0) == 200){
-            PlayerPrefs.SetInt("Level",2);
-            //Achievements.Grow.Unlock();
-        }
-        else if(PlayerPrefs.GetInt("Experience", 0) == 300){
-            PlayerPrefs.SetInt("Level",3);
-            //Achievements.Live.Unlock();
-        }
-        else if(PlayerPrefs.GetInt("Experience", 0) == 400){
-            PlayerPrefs.SetInt("Level",4);
-            //Achievements.Work.Unlock();
-        }
-        else if(PlayerPrefs.GetInt("Experience", 0) == 500){
-            PlayerPrefs.SetInt("Level",5);
-            //Achievements.Age.Unlock();
-        }
-        
     }
 
     public void OnWin(){
@@ -82,10 +60,4 @@ public class AchievementManager : MonoBehaviour
     public void OnName(){
         PlayerPrefs.SetInt("Name",1);
     }
-
-    // public void OnEnergy(){
-    //     if(CloudVariables.Energy < 10){
-    //     CloudVariables.Energy += 1;
-    //     }
-    // }
 }
