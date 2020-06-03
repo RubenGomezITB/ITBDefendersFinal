@@ -367,6 +367,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="AchievementManager.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="obeliscoAnimation" t="Include">
             <e p="obeliscoAnimScript.cs" t="Include" />
