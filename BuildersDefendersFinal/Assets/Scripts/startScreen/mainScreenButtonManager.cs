@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -23,6 +24,8 @@ public class MainScreenButtonManager : MonoBehaviour
     private List<bool> UpgradePanelBools = new List<bool> {false, false, false, false};
     [SerializeField] public bool cardScreenIsActive;
     private DisplayCardAttributesScript cardScreenScript;
+    public Text gold, username;
+    public InputField input;
 
 
     // Start is called before the first frame update
@@ -34,7 +37,18 @@ public class MainScreenButtonManager : MonoBehaviour
         musicIsActive = true;
         chGoBackBtnIsActive = false;
         crGoBackBtnIsActive = false;
+        gold.text = PlayerPrefs.GetInt("Gold", 0).ToString();
     }
+    public void SetPlayerName()
+    {
+        string value = input.text;
+
+        PhotonNetwork.NickName = value;
+
+        PlayerPrefs.SetString("PlayerName", value);
+        username.text = value;    
+    }
+
 
 
     public void SetFriendsScreen()
