@@ -8,7 +8,7 @@ public class AchievementManager : MonoBehaviour
     public static AchievementManager achinstance;
     public GameObject canvasAchievement;
     public Text text;
-     
+
     private void Awake()
     {
         if (achinstance == null)
@@ -23,7 +23,8 @@ public class AchievementManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    void Start(){
+    void Start()
+    {
         canvasAchievement.gameObject.SetActive(false);
     }
 
@@ -47,15 +48,16 @@ public class AchievementManager : MonoBehaviour
             StartCoroutine(showAchievementTime());
         }
 
-        goldExperienceLevel(100,100);
+        goldExperienceLevel(100, 100);
     }
 
     public void OnLose()
     {
-        goldExperienceLevel(50,50);
+        goldExperienceLevel(50, 50);
     }
 
-    public void goldExperienceLevel(int gold,int experience){
+    public void goldExperienceLevel(int gold, int experience)
+    {
         PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold", 0) + gold);
         PlayerPrefs.SetInt("Experience", PlayerPrefs.GetInt("Experience", 0) + experience);
         if (PlayerPrefs.GetInt("Experience", 0) == 100)
@@ -72,5 +74,15 @@ public class AchievementManager : MonoBehaviour
         canvasAchievement.gameObject.SetActive(true);
         yield return new WaitForSeconds(3.0f);
         canvasAchievement.gameObject.SetActive(false);
+    }
+
+    public void onNameChange()
+    {
+        if (PlayerPrefs.GetInt("Name", 0) != 1)
+        {
+            text.text = "Name changed!";
+            StartCoroutine(showAchievementTime());
+            PlayerPrefs.SetInt("Name", 1);
+        }
     }
 }

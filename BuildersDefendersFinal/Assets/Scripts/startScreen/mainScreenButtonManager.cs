@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
+using Image = UnityEngine.UI.Image;
 
 
 public class MainScreenButtonManager : MonoBehaviour
@@ -28,6 +32,10 @@ public class MainScreenButtonManager : MonoBehaviour
     public InputField input;
     AudioSource audioSource;
     public AudioClip[] listAudio;
+    public ScrollView ScrollView;
+    public Sprite image;
+    public Image logro1, logro2, logro3, logro4;
+    public Text logroNivel;
 
     public GameManager gameManager;
     
@@ -44,6 +52,7 @@ void Start()
         gold.text = PlayerPrefs.GetInt("Gold", 0).ToString();
 
         audioSource = GetComponent<AudioSource>();
+        
     }
     public void SetPlayerName()
     {
@@ -52,7 +61,8 @@ void Start()
         PhotonNetwork.NickName = value;
 
         PlayerPrefs.SetString("PlayerName", value);
-        username.text = value;    
+        username.text = value;
+        AchievementManager.achinstance.onNameChange();
     }
 
 
@@ -134,6 +144,25 @@ void Start()
             audioSource.clip = listAudio[0];
             audioSource.Play();
         }
+
+        if (PlayerPrefs.GetInt("WonGames", 0) >= 1)
+        {
+            logro1.sprite = image;
+        }
+        if (PlayerPrefs.GetInt("WonGames", 0) >= 3)
+        {
+            logro2.sprite = image;
+        }
+        if (PlayerPrefs.GetInt("WonGames", 0) >= 10)
+        {
+            logro3.sprite = image;
+        }
+        if (PlayerPrefs.GetInt("Name", 0) >= 1)
+        {
+            logro4.sprite = image;
+        }
+
+        logroNivel.text = "Lvl " + PlayerPrefs.GetInt("Level", 1)+ "!";
     }
 
     public void DisplaySettingsPanel()

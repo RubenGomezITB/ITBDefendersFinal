@@ -380,6 +380,10 @@
           </e>
           <e p="PlayManager.cs" t="Include" />
           <e p="RoundCounter.cs" t="Include" />
+          <e p="SFX" t="Include">
+            <e p="GameManagerController.cs" t="Include" />
+            <e p="SoundManager.cs" t="Include" />
+          </e>
           <e p="Spawns" t="Include">
             <e p="Dragdrop.cs" t="Include" />
             <e p="RaycastHitter.cs" t="Include" />
