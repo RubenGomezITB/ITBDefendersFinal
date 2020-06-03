@@ -84,7 +84,8 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
     }
 
     public void OnEndDrag(PointerEventData eventData)
-    {
+    { 
+        raycastHitter.SetActive(false);
         canMove = true;
         if (hit.transform.gameObject.GetComponent<RaycastHitter>().SpawnZone == SpawnZone)
         {
@@ -94,7 +95,7 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
 
         Destroy(objectToInstantiate.gameObject);
         objectToInstantiate = null;
-        raycastHitter.SetActive(false);
+       
     }
 
     public void OnDrag(PointerEventData eventData)

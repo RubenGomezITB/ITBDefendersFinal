@@ -21,6 +21,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
     public float energyTimer = 0.0f;
     public Slider Slider;
     public Text sliderValue;
+    AsyncOperation asyncLoadLevel;
 
 
     private void Start()
@@ -108,21 +109,36 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
     private IEnumerator youLose()
     {
         winLose.text = "Perdiste";
-        achievementManager.OnLose();
+    
         winLose.gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
         PhotonNetwork.LeaveRoom();
-        SceneManager.LoadScene(0);
+        asyncLoadLevel = SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
+        while (!asyncLoadLevel.isDone)
+        {
+            print("Loading the Scene");
+            yield return null;
+          
+        } 
+        achievementManager.OnLose();
     }
 
     private IEnumerator youWin()
     {
         winLose.text = "Ganaste";
-        achievementManager.OnWin();
+    
         winLose.gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene(0);
+        asyncLoadLevel = SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
+        while (!asyncLoadLevel.isDone)
+        {
+            print("Loading the Scene");
+            yield return null;
+          
+        } 
+        achievementManager.OnWin();
     }
 
     private void timerEnded()

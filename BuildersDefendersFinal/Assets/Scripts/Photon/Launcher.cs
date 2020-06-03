@@ -30,7 +30,23 @@ public class Launcher : MonoBehaviourPunCallbacks
         Connect();
     }
 
-  
+    private void Update()
+    {
+        if (PhotonNetwork.IsConnected)
+        {
+        }
+        else
+        {
+            //Conexión con el servidor maestro de pun
+            PhotonNetwork.GameVersion = gameVersion;
+            
+            PhotonNetwork.PhotonServerSettings.AppSettings.AppIdRealtime = "258c8da4-1e99-49c0-9872-a0bfda278826";
+            PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = "eu";
+            PhotonNetwork.ConnectUsingSettings();
+            //debugText.text += "\n Conectando a master";
+        }
+    }
+
 
     public void Connect()
     {

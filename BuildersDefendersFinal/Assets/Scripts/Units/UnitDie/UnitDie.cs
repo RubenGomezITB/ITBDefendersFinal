@@ -1,7 +1,9 @@
 ﻿﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+ using Photon.Pun;
+ using UnityEditor.Experimental.GraphView;
+ using UnityEngine;
 
 public class UnitDie : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class UnitDie : MonoBehaviour
 
     private void Start()
     {
-        if (gameObject.name != "nextClient" || gameObject.name != "nextHost") {
+        if (gameObject.name != "nexClient" || gameObject.name != "nexHost") {
             unitLife = GetComponent<UnitLife>();
             animator = GetComponent<Animator>();
         }
@@ -25,12 +27,13 @@ public class UnitDie : MonoBehaviour
             if (unitLife.life <= 0)
             {
                 animator.SetBool("death", true);
+                Destroy(gameObject,2f);
             }
 
             if (Input.GetKeyDown(KeyCode.A))
             {
 
-                Destroy(gameObject);
+                PhotonNetwork.Destroy(gameObject);
             }
         }
             

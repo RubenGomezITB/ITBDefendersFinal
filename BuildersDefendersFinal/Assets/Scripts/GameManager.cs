@@ -94,11 +94,6 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
     }
 
-    void OnApplicationQuit()
-    {
-        PhotonNetwork.Disconnect();
-    }
-
     public override void OnLeftRoom()
     {
         base.OnLeftRoom();

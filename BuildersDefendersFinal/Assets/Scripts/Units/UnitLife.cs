@@ -29,10 +29,11 @@ public class UnitLife : MonoBehaviour, IPunObservable
         if (PhotonNetwork.IsMasterClient)
         {
             life -= damage;
-            if (life <= 0)
-            {
-                destroyThisObject();
-            }
+        }
+
+        if (life <= 0 && GetComponent<PhotonView>().IsMine)
+        {
+            destroyThisObject();
         }
     }
 
