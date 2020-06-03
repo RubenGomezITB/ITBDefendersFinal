@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject camaraClient, camaraHosted;
     public bool playing = false;
     private Scene currentScene;
-    AudioSource AudioSource;
+    public AudioSource AudioSource;
     public AudioClip[] listAudio;
 
     private void Awake()

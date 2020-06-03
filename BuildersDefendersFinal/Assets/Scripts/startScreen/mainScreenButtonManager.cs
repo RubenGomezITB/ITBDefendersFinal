@@ -25,6 +25,8 @@ public class MainScreenButtonManager : MonoBehaviour
     private DisplayCardAttributesScript cardScreenScript;
     AudioSource audioSource;
     public AudioClip[] listAudio;
+
+    public GameManager gameManager;
     
 
 // Start is called before the first frame update
@@ -142,7 +144,7 @@ void Start()
         colors.highlightedColor = new Color32(0, 255, 0, 255);
         SettingsBtns[0].colors = colors;
         SettingsBtns[0].image.color = new Color32(0, 255, 0, 255);
-        
+        audioSource.gameObject.SetActive(true);
     }
 
     private void StopSound()
@@ -152,7 +154,7 @@ void Start()
         colors.highlightedColor = new Color32(255, 0, 0, 255);
         SettingsBtns[0].colors = colors;
         SettingsBtns[0].image.color = new Color32(255, 0, 0, 255);
-        
+        audioSource.gameObject.SetActive(false);
     }
 
     private void ActivateMusic()
@@ -162,7 +164,7 @@ void Start()
         colors.highlightedColor = new Color32(0, 255, 0, 255);
         SettingsBtns[1].colors = colors;
         SettingsBtns[1].image.color = new Color32(0, 255, 0, 255);
-        
+        gameManager.AudioSource.Play();
     }
 
     private void StopMusic()
@@ -172,7 +174,7 @@ void Start()
         colors.highlightedColor = new Color32(255, 0, 0, 255);
         SettingsBtns[1].colors = colors;
         SettingsBtns[1].image.color = new Color32(255, 0, 0, 255);
-        
+        gameManager.AudioSource.Stop();
     }
 
     public void SetSound()
