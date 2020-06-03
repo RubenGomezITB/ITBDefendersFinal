@@ -20,6 +20,8 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
     public bool ataque;
     RaycastHit hit;
     public GameObject raycastHitter, host, client;
+    public PlayManager PlayManager;
+    public UnitsScriptable UnitsScriptable;
 
     private void Start()
     {
@@ -58,9 +60,9 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
     {
         if (objectToInstantiate != null)
         {
-           Ray ray = camara.ScreenPointToRay(Input.mousePosition);
+            Ray ray = camara.ScreenPointToRay(Input.mousePosition);
 
-            
+
             if (Physics.Raycast(ray, out hit, distance, layer))
             {
                 Vector3 position = hit.point;
@@ -68,6 +70,7 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
                 objectToInstantiate.transform.position = new Vector3(position.x, 0.5633333f, position.z);
             }
         }
+
         Debug.Log(PhotonNetwork.IsMasterClient);
     }
 
@@ -84,9 +87,11 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
     {
         canMove = true;
         if (hit.transform.gameObject.GetComponent<RaycastHitter>().SpawnZone == SpawnZone)
-        { 
+        {
+            PlayManager.energyTimer -= UnitsScriptable.cost;
             PhotonNetwork.Instantiate(enemy.name, objectToInstantiate.transform.position, Quaternion.identity);
         }
+
         Destroy(objectToInstantiate.gameObject);
         objectToInstantiate = null;
         raycastHitter.SetActive(false);
@@ -94,20 +99,23 @@ public class Dragdrop : MonoBehaviourPunCallbacks, IPointerDownHandler, IBeginDr
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (canMove)
+        if (PlayManager.energyTimer >= UnitsScriptable.cost)
         {
-            _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
-        }
-
-        if (_rectTransform.anchoredPosition.y >= initialTransform.y + 20)
-        {
-            _rectTransform.anchoredPosition = initialTransform;
-            canMove = false;
-            touchPosition = camara.ScreenToWorldPoint(touch.position);
-            if (objectToInstantiate == null)
+            if (canMove)
             {
-                objectToInstantiate = Instantiate(objectPreview,
-                    new Vector3(touchPosition.x, 0.5633333f, touchPosition.z), Quaternion.identity);
+                _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
+            }
+
+            if (_rectTransform.anchoredPosition.y >= initialTransform.y + 20)
+            {
+                _rectTransform.anchoredPosition = initialTransform;
+                canMove = false;
+                touchPosition = camara.ScreenToWorldPoint(touch.position);
+                if (objectToInstantiate == null)
+                {
+                    objectToInstantiate = Instantiate(objectPreview,
+                        new Vector3(touchPosition.x, 0.5633333f, touchPosition.z), Quaternion.identity);
+                }
             }
         }
     }

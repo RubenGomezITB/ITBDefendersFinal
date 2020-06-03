@@ -3,17 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnitLife : MonoBehaviour, IPunObservable
 {
     public float life;
     public PhotonView PhotonView;
+    public Slider Slider;
 
     [SerializeField] private UnitsScriptable _us;
 
     private void Start()
     {
         life = _us.Life;
+        Slider.maxValue = life;
+    }
+
+    private void Update()
+    {
+        Slider.value = life;
     }
 
     public void recibeDamage(float damage)

@@ -17,8 +17,9 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
     public Canvas Canvas;
 
     public AchievementManager achievementManager;
-    public float totalEnergy;
-    private float energyTimer = 0.0f; 
+    public float energyTimer = 0.0f;
+    public Slider Slider;
+    public Text sliderValue;
 
 
     private void Start()
@@ -72,11 +73,12 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
             }
 
             energyTimer += Time.deltaTime;
-
-            if(energyTimer >= 1.0f && totalEnergy <= 9.0f){
-                totalEnergy += 1.0f;
-                energyTimer = 0.0f;
+            if (energyTimer >= 10)
+            {
+                energyTimer = 10;
             }
+            Slider.value = energyTimer;
+            sliderValue.text = ((int) Mathf.Floor(energyTimer)).ToString();
         }
     }
 
