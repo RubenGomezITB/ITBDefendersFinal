@@ -11,20 +11,29 @@ public class UnitDie : MonoBehaviour
 
     private void Start()
     {
-        unitLife = GetComponent<UnitLife>();
-        animator = GetComponent<Animator>();
+        if (gameObject.name != "nextClient" || gameObject.name != "nextHost") {
+            unitLife = GetComponent<UnitLife>();
+            animator = GetComponent<Animator>();
+        }
+        
+       
     }
     void Update()
     {
-        if (unitLife.life<=0) {
-            animator.SetBool("death", true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.A))
+        if (gameObject.name != "nextClient" || gameObject.name != "nextHost")
         {
-            
-            Destroy(gameObject);
+            if (unitLife.life <= 0)
+            {
+                animator.SetBool("death", true);
+            }
+
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+
+                Destroy(gameObject);
+            }
         }
+            
     }
 
     private void OnDestroy()

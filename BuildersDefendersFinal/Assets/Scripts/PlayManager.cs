@@ -112,7 +112,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
         winLose.gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
         PhotonNetwork.LeaveRoom();
-        SceneManager.LoadScene("StartSceneMaster", LoadSceneMode.Single);
+        SceneManager.LoadScene(0);
     }
 
     private IEnumerator youWin()
@@ -122,7 +122,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
         winLose.gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
         PhotonNetwork.LeaveRoom();
-        SceneManager.LoadScene("StartSceneMaster", LoadSceneMode.Single);
+        SceneManager.LoadScene(0);
     }
 
     private void timerEnded()
