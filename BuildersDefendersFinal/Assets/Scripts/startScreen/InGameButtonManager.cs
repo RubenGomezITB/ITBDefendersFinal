@@ -13,6 +13,7 @@ public class InGameButtonManager : MonoBehaviour
     public List<Button> SettingsBtns = new List<Button>();
     AudioSource audioSource;
     public AudioClip[] listAudio;
+    PlayManager playManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -119,7 +120,8 @@ public class InGameButtonManager : MonoBehaviour
             audioSource.clip = listAudio[0];
             audioSource.Play();
         }
-        SceneManager.LoadScene("startSceneKleyton", LoadSceneMode.Single);
-        SetSettings();
+        //SetSettings();
+        playManager.clientWin();//correcto??
+        
     }
 }

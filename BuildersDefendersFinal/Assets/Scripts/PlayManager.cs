@@ -85,7 +85,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    private void clientWin()
+    public void clientWin()
     {
         ended = true;
         if (PhotonNetwork.IsMasterClient)
@@ -95,7 +95,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
         }
         else StartCoroutine(youWin());
     }
-    private void hostWin()
+    public void hostWin()
     {
         ended = true;
         if (PhotonNetwork.IsMasterClient)
@@ -112,7 +112,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
         winLose.gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
         PhotonNetwork.LeaveRoom();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("StartSceneMaster", LoadSceneMode.Single);
     }
 
     private IEnumerator youWin()
@@ -122,7 +122,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
         winLose.gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
         PhotonNetwork.LeaveRoom();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("StartSceneMaster", LoadSceneMode.Single);
     }
 
     private void timerEnded()
