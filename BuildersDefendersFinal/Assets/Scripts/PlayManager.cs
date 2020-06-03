@@ -11,6 +11,7 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
     public const int Timer = 180;
     public float timeRemain = 60;
     public bool roundStarted = false, decayBool = false, load = false;
+    public GameObject countDownNumbersContainer;
     public Text Text, winLose;
     public UnitLife nexusMaster, nexusClient;
     private bool ended = false, canStart = false;
@@ -29,8 +30,10 @@ public class PlayManager : MonoBehaviourPunCallbacks, IPunObservable
 
     private IEnumerator AnimacionStartRound()
     {
-        Debug.Log("CoroutineExample started at " + Time.time.ToString() + "s");  
+        countDownNumbersContainer.SetActive(true);
+        Debug.Log("CoroutineExample started at " + Time.time.ToString() + "s");
         yield return new WaitForSeconds(3f);
+        countDownNumbersContainer.SetActive(false);
         Canvas.gameObject.SetActive(true);
         canStart = true;
         roundStarted = true;

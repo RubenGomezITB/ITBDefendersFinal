@@ -85,7 +85,7 @@ public class DisplayCardAttributesScript : MonoBehaviour
     
     public void UpdateCardScreenCard() {//se actualiza la carta del visor de carta al hacer click en una de las del  deck
         cardScreenScript.card = card;
-        if (!cardScreen.activeSelf) {
+        if (cardScreen.activeSelf) {
             cardScreenScript.cardImage.sprite = card.cardArt;
             cardScreenScript.cardImage.type = Image.Type.Simple;
             cardScreenScript.life.text = card.Life.ToString();
@@ -106,7 +106,5 @@ public class DisplayCardAttributesScript : MonoBehaviour
     {
         card = _card;
     }
-
-
 
 }

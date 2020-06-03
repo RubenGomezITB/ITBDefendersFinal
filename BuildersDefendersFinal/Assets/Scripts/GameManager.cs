@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject camaraClient, camaraHosted;
     public bool playing = false;
     private Scene currentScene;
+    public AudioSource AudioSource;
+    public AudioClip[] listAudio;
 
     private void Awake()
     {
@@ -25,6 +27,11 @@ public class GameManager : MonoBehaviourPunCallbacks
         DontDestroyOnLoad(this);
     }
 
+    public void Start()
+    {
+        AudioSource = GetComponent<AudioSource>();
+    }
+
     void OnEnable()
     {
         Debug.Log("OnEnable called");
@@ -35,6 +42,15 @@ public class GameManager : MonoBehaviourPunCallbacks
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         currentScene = scene;
+        Debug.Log(scene.name == "StartSceneMaster");
+        if (scene.name == "StartSceneMaster")
+        {
+            AudioSource.clip = listAudio[0];
+            if (!AudioSource.isPlaying)
+            {
+                AudioSource.Play();
+            }
+        }
         if (scene.name == "PlaySceneMaster")
         {
             if (PhotonNetwork.IsMasterClient)
@@ -48,7 +64,18 @@ public class GameManager : MonoBehaviourPunCallbacks
 
             playing = true;
             isLoading = false;
+
+            AudioSource.clip = listAudio[1];
+            if (!AudioSource.isPlaying)
+            {
+                AudioSource.Play();
+            }
         }
+        else
+        {
+            AudioSource.Stop();
+        }
+
     }
 
     void OnDisable()
@@ -77,16 +104,16 @@ public class GameManager : MonoBehaviourPunCallbacks
         base.OnLeftRoom();
         SceneManager.LoadScene(0);
     }
-    
 
     private void Update()
     {
-        if (playing == false)
+        if (playing == false && PhotonNetwork.InRoom)
         {
+            
             if (PhotonNetwork.CurrentRoom.PlayerCount == 2 & PhotonNetwork.IsMasterClient)
             {
                 LoadLevel();
             }
         }
     }
-}
+    }
